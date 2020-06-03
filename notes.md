@@ -25,3 +25,9 @@ belongs_to
 has many through
 -users have many vehicles through reviews
 -vehicles have many users through reviews
+
+validation
+-----------
+user - username(prescence and uniquness)
+vehicle - presence of plate_number
+review - presence of bug_type
