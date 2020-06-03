@@ -11,8 +11,8 @@ relationships
 ----------------
 
 models 
-vehicle - Id, plate_number, rent_date
-user - Id, username
+vehicles - Id, plate_number, rent_date
+users - Id, username
 reviews - Id, 
 
 has_many relationship
