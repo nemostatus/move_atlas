@@ -29,5 +29,19 @@ has many through
 validation
 -----------
 user - username(prescence and uniquness)
-vehicle - presence of plate_number
+vehicle - presence of plate_number and other attrs
 review - presence of bug_type
+
+scope method
+-------------
+class method
+lives in model
+ def find_vehicle_by_plate_number
+ Vehicle.find_by(plate_number: params[:plate_number])
+ end
+
+ scope :method_name, => { activerecord method(column: 'value')}
+ scope 
+
+ NEW THOUGHT 
+ Instead of just reviewing the bad you also let other users know if the vehicle was good and when that way they can query the most recent experiencce someon had with the vehicle and can tell if theyll have a good experience or not so that means I'll have to add an attr to the table. something like... :status()

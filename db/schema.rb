@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_03_060134) do
+ActiveRecord::Schema.define(version: 2020_06_04_114059) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "bug_type"
-    t.integer "customer_service_response_rating"
+    t.integer "customer_experience_rating"
     t.integer "user_id"
     t.integer "vehicle_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status"
+    t.string "company_name"
+    t.date "pick_up_date"
     t.index ["user_id"], name: "index_reviews_on_user_id"
     t.index ["vehicle_id"], name: "index_reviews_on_vehicle_id"
   end
