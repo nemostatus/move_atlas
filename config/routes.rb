@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
   get '/vehicle', to: 'vehicles#new'
+  
 
   resources :users, only: [:show, :delete] do
     resources :reviews

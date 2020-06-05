@@ -7,6 +7,7 @@ class VehiclesController < ApplicationController
      
     def create
         @vehicle = Vehicle.new(vehicle_params)
+       
         if @vehicle.save
             redirect_to vehicles_path(@vehicle)
         else
@@ -14,11 +15,7 @@ class VehiclesController < ApplicationController
         end 
     end
 
-    def show
-        @vehicle = Vehicle.find(params[:id])
-        @review = @vehicle.reviews.build
-       
-    end 
+    
 
     private
     def vehicle_params
