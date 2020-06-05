@@ -5,12 +5,23 @@ class UsersController < ApplicationController
     end 
 
     def create 
-      @user = User.create(params.require(:user).permit(:username, :password))
-      session[:user_id] = @user.id 
-      redirect_to user_path(@user)
+      @user = User.create(user_params)
+      if @user.save
+        log_in(@user)
+        redirect_to @user
+        flash[:success] = "You're all signed up!"
+      else
+        render :new
+      end
+    
     end 
 
     def show 
+        @user = User.find(params[:id])
+    end
+    private
+    def user_params 
+        params.require(:user).permit(:username, :password))
     end
  
    

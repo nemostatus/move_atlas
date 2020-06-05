@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
         redirect_to welcome_path
     end
     def current_user    
-        User.find_by(id: session[:user_id])  
-    end
+        @current_user ||= User.find_by(id: session[:user_id])
+  end
     def logged_in?
        !current_user.nil?  
     end
@@ -16,4 +16,13 @@ class ApplicationController < ActionController::Base
     def authorized
         redirect_to '/welcome' unless logged_in?
      end
+
+     def log_in(user)
+        session[:user_id] = user.id
+      end
+
+      def log_out
+        session[:user_id] = nil
+        redirect_to '/', notice: 'You are logged out!'
+      end
 end
