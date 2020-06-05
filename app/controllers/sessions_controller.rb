@@ -1,7 +1,13 @@
 class SessionsController < ApplicationController
+    def welcome
+        render :welcome
+    end
+    
     def new
         @user = User.new
     end
+
+  
 
     def create
         @user = User.find_by(username: params[:user][:username]) #create signup  so it has something to find
@@ -11,5 +17,7 @@ class SessionsController < ApplicationController
         else
             render :new
     end
+
+    
 end
 end
