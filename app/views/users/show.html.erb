@@ -2,7 +2,7 @@ Welcome to your move atlas <%= current_user.username %> !
 <br>
 <h3> Reviews: </h3>
 <% current_user.reviews.each.with_index(1) do |review, i| %>
-<%= "#{i}" %> <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, behicle_path(review.vehicle) %><br>
+<%= "#{i}" %> <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
 <ul>
           <li><b>Review:</b> <%= review.customer_experience_rating%>
             Posted: <%= review.created_at %><br>

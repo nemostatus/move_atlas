@@ -13,15 +13,20 @@
     <%=vehicle.label :pick_up_date%>
     <%=vehicle.text_field :pick_up_date%>
     <br>
-    <%=vehicle.label :company_name%>
+    WWhat rental company did you use?
     <%=vehicle.text_field :company_name%>
     <br>
-    Do you suspect this vehicle of having bugs?
+    Do you suspect this vehicle of having bugs? 
     <%=vehicle.check_box :status%>
     <br>
     <%=vehicle.label :bug_type%>
     <%=vehicle.text_field :bug_type%>
     <br>
+    <%=vehicle.fields_for :reviews, @vehicle.reviews.build do |nest| %>
+        customer experience rating
+        <%=nest.number_field :customer_experience_rating%>
+        <%= nest.hidden_field :user_id, value: current_user.id %>
+<% end %>
     <%=vehicle.submit%>
     <%end%>
    
