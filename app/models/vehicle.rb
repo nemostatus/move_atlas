@@ -10,12 +10,6 @@ class Vehicle < ApplicationRecord
     validates :company_name, presence: true
     validates :pick_up_date, presence: true
 
-    self.infested
-    where(status: true)
-    end
-
-    self.clean
-    where(status: false)
-    end
+     
     
 end

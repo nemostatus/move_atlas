@@ -1,27 +1,27 @@
 <h1> New vehicle </h1>
 <%= form_for @vehicle do |vehicle| %>
+    
     <%=vehicle.label :plate_number%>
     <%=vehicle.text_field :plate_number %>
-  
+  <br>
     <%=vehicle.label :plate_state%>
     <%=vehicle.text_field :plate_state%>
-
+    <br>
     <%=vehicle.label :vehicle_type%>
     <%=vehicle.text_field :vehicle_type%>
-
+    <br>
     <%=vehicle.label :pick_up_date%>
     <%=vehicle.text_field :pick_up_date%>
-
+    <br>
     <%=vehicle.label :company_name%>
     <%=vehicle.text_field :company_name%>
-
-    <%=vehicle.label :status%>
-    <%=vehicle.text_field :status%>
-
+    <br>
+    Do you suspect this vehicle of having bugs?
+    <%=vehicle.check_box :status%>
+    <br>
     <%=vehicle.label :bug_type%>
     <%=vehicle.text_field :bug_type%>
-
-    <%end%>
+    <br>
     <%=vehicle.submit%>
     <%end%>
    
