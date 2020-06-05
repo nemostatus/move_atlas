@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+    def page_requires_login
+    end
     def welcome
         render :welcome
     end
@@ -10,14 +13,12 @@ class SessionsController < ApplicationController
   
 
     def create
-        @user = User.find_by(username: params[:user][:username]) #create signup  so it has something to find
-        if @user && @user.authenticate(password: params[:user][:password])
-            sessions[:user_id] = @user.id
-            redirect_to user_path(@user)
+        @user = User.find_by(username: params[:username])
+        if @user && @user.authenticate(params[:password])
+           sessions[:user_id] = @user.id
+           redirect_to '/welcome'
         else
-            render :new
-    end
-
-    
-end
+           redirect_to '/login'
+        end
+     end
 end
