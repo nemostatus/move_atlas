@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'application#home'
   resources :reviews
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resources :vehicles
   get '/welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
