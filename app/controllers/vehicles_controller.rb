@@ -29,6 +29,7 @@ class VehiclesController < ApplicationController
     end 
 
     def destroy
+        
         @vehicle = Vehicle.find(params[:id])
         @vehicle.destroy
         redirect_to user_path(current_user)

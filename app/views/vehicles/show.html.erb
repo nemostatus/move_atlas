@@ -12,4 +12,4 @@ Vehicle plate state: <%=@vehicle.plate_state%>
    <br>
    This vehicle is suspected to have had <%=@vehicle.bug_type%> around <%=@vehicle.pick_up_date%>.
 
-   <%= button_to "delete", vehicle_path(current_user), method: :delete %> 
+   <%= button_to "delete", vehicle_path(@vehicle), method: :delete %> 
