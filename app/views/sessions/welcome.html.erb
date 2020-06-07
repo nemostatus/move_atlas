@@ -1,7 +1,7 @@
 <h1>Welcome</h1>
 <% if logged_in? %>
-    <h2>You are Logged In, <%= current_user.username %></h2>
-    
+You are already logged in would you like to go to your homepage
+<%= button_to "Homepage", user_path(current_user.id), method: :get%>
 <%end%>
 
 <%= button_to "Login", '/login', method: :get%>
