@@ -1,11 +1,12 @@
 Welcome to your move atlas <%= current_user.username %> !
 <br>
-<%= link_to "vehicle", '/vehicle'  %> 
+<%= link_to "vehicle", '/vehicles/new'  %> 
 <h3> Reviews: </h3>
 <% current_user.reviews.each.with_index(1) do |review, i| %>
 <%= "#{i}" %> <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
 <ul>
-          <li><b>Review:</b> <%= review.customer_experience_rating%>
+          <li><b>Review:</b> Experience Rating: <%= review.customer_experience_rating%>
+           <br>
             Posted: <%= review.created_at %><br>
         </ul>
         <% if current_user == review.user %>

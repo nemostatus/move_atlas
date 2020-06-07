@@ -1,4 +1,7 @@
 class VehiclesController < ApplicationController
+    def index
+        @vehicles = Vehicle.all 
+    end
     
     def new
         @vehicle = Vehicle.new
@@ -17,6 +20,12 @@ class VehiclesController < ApplicationController
           render :new
         end 
     end
+
+    def show
+        @vehicle = Vehicle.find(params[:id])
+        @review = @vehicle.reviews.build
+        render :show
+    end 
 
     
 

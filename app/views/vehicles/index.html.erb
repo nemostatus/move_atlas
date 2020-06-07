@@ -1,1 +1,11 @@
 <h1> Your vehicles </h1>
+
+<% @vehicles.each do |vehicle| %>
+    <ul>
+      <li><h4><b><%= link_to vehicle.plate_number, vehicle_path(vehicle) %></h4>From:</b> <%= vehicle.company_name %></li>
+    </ul>
+    <% end %>
+    
+    <% if logged_in? %>
+    <br><%= link_to "Add New Vehicle", new_vehicle_path %>
+    <% end %>
