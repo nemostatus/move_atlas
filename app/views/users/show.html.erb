@@ -11,7 +11,7 @@ Welcome to your move atlas <%= current_user.username %> !
         </ul>
         <% if current_user == review.user %>
         <%= link_to "edit", edit_user_review_path(current_user, review)  %> 
-        <%= link_to "delete", user_review_path(current_user, review), method: :delete %><br>
+        <%= button_to "delete", user_review_path(current_user, review), method: :delete %><br>
         <br>
         <br>
         <% end %>
