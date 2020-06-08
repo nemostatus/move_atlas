@@ -1,1 +1,32 @@
-<%= @vehicle == nil %>
+<h1> New vehicle </h1>
+<%= form_for @vehicle do |vehicle| %>
+    
+    <%=vehicle.label :plate_number%>
+    <%=vehicle.text_field :plate_number %>
+  <br>
+    <%=vehicle.label :plate_state%>
+    <%=vehicle.text_field :plate_state%>
+    <br>
+    <%=vehicle.label :vehicle_type%>
+    <%=vehicle.text_field :vehicle_type%>
+    <br>
+    <%=vehicle.label :pick_up_date%>
+    <%=vehicle.text_field :pick_up_date%>
+    <br>
+    What rental company did you use?
+    <%=vehicle.text_field :company_name%>
+    <br>
+    Do you suspect this vehicle of having bugs? 
+    <%=vehicle.check_box :status%>
+    <br>
+    <%=vehicle.label :bug_type%>
+    <%=vehicle.text_field :bug_type%>
+    <br>
+    <%=vehicle.fields_for :reviews, @reviews.build do |nest| %>
+        customer experience rating
+        <%=nest.number_field :customer_experience_rating%>
+        <%= nest.hidden_field :user_id, value: current_user.id %>
+<% end %>
+    <%=vehicle.submit%>
+    <%end%>
+   

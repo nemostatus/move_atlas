@@ -10,10 +10,9 @@ Welcome to your move atlas <%= current_user.username %> !
            <br>
             Posted: <%= review.created_at %><br>
         </ul>
-        <% if current_user == review.user %>
-        <%= link_to "edit", edit_user_review_path(current_user, review)  %> 
-        <%= button_to "delete", user_review_path(current_user, review), method: :delete %><br>
+        
+       
         <br>
         <br>
-        <% end %>
+       
         <% end %>

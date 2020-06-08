@@ -25,8 +25,9 @@ class VehiclesController < ApplicationController
         end 
     
         def edit
-          @user = User.find(params[:user_id])
+        
           @vehicle = Vehicle.find(params[:id])
+          @reviews = @vehicle.reviews 
           render :edit
         end
         
@@ -44,14 +45,16 @@ class VehiclesController < ApplicationController
    
 
     def destroy
-        @review = Review.find(params[:id])
+        @review = Review.find(params[:id]) 
         @vehicle = Vehicle.find(params[:id])
         @vehicle.destroy
         @review.destroy
+
         redirect_to user_path(current_user)  #deleted together to avoid an error, fixed it one way however i do want to
         #can delete both vehicle and its review when i delete vehicle, now i want the option to delete the review but not
         #the vehicle. How? Is this considered conventional?
-    end
+  
+  end
 
     
 
