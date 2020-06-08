@@ -4,15 +4,21 @@ Welcome to your move atlas <%= current_user.username %> !
 <%=link_to "Your Vehicles", '/vehicles' %> 
 <h3> Reviews: </h3>
 <% current_user.reviews.each.with_index(1) do |review, i| %>
-<%= "#{i}" %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
+    <% if review.vehicle.present? %>
+    <%= "#{i}" %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
 <ul> 
           <li><b>Review:</b> Experience Rating: <%= review.customer_experience_rating%>
            <br>
             Posted: <%= review.created_at %><br>
         </ul>
-        
+        <%= link_to "edit", edit_user_review_path(current_user, review)  %> 
+        <%= button_to "delete", user_review_path(current_user, review), method: :delete %><br>
+        <% else %>
+       <h3> No reviews logged. </h3>
        
         <br>
         <br>
        
         <% end %>
+        <% end %>
+        
