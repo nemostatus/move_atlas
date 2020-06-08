@@ -27,13 +27,14 @@ class VehiclesController < ApplicationController
         def edit
         
           @vehicle = Vehicle.find(params[:id])
-          @reviews = @vehicle.reviews 
+          @reviews = @vehicle.reviews
           render :edit
         end
         
           def update
             @vehicle = Vehicle.find(params[:id])
-            if @vehicle.update(vehicle_params)
+           
+            if @vehicle.update(vehicle_params) 
              
               redirect_to user_path(current_user)
             else
@@ -63,7 +64,7 @@ class VehiclesController < ApplicationController
     def vehicle_params
         params.require(:vehicle).permit(:plate_number, 
         :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type, 
-        reviews_attributes: [:customer_experience_rating, :user_id])
+        reviews_attributes: [ :id, :customer_experience_rating,:user_id, :vehicle_id])
    
     end 
 end
