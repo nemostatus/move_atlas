@@ -11,5 +11,6 @@ Vehicle plate state: <%=@vehicle.plate_state%>
    Does this vehicle have bugs? <%=@vehicle.status%>
    <br>
    This vehicle is suspected to have had <%=@vehicle.bug_type%> around <%=@vehicle.pick_up_date%>.
-
-   <%= button_to "delete", vehicle_path(@vehicle), method: :delete %> 
+   <br>
+   <%= button_to "Edit your Vehicle", edit_vehicle_path(@vehicle)  %> 
+   <%= button_to "Delete", vehicle_path(@vehicle), method: :delete %> 

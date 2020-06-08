@@ -19,7 +19,23 @@ class VehiclesController < ApplicationController
         else
           render :new
         end 
-    end
+    
+        def edit
+            @user = User.find(current_user.id)
+            @vehicle = Vehicle.find(params[:id])
+           
+          end
+        
+          def update
+            @vehicle = Vehicle.find(params[:id])
+            if @vehicle.update(vehicle_params)
+             
+              redirect_to user_path(current_user)
+            else
+              render :edit
+            end
+          end
+        end
 
     def show
         @vehicle = Vehicle.find(params[:id])
