@@ -10,21 +10,25 @@ class VehiclesController < ApplicationController
     end
      
     def create
-       
-        @vehicle = Vehicle.new(vehicle_params)
-      
-        if @vehicle.save
-            
-            redirect_to vehicles_path(@vehicle)
-        else
-          render :new
+       @vehicle = Vehicle.new(vehicle_params)
+      if @vehicle.save
+       redirect_to vehicles_path(@vehicle)
+       else
+         render :new
+        end 
+      end
+        def show
+            @vehicle = Vehicle.find(params[:id])
+            @review = @vehicle.reviews.build
+          
+            render :show
         end 
     
         def edit
-            @user = User.find(current_user.id)
-            @vehicle = Vehicle.find(params[:id])
-           
-          end
+          @user = User.find(params[:user_id])
+          @vehicle = Vehicle.find(params[:id])
+          render :edit
+        end
         
           def update
             @vehicle = Vehicle.find(params[:id])
@@ -34,15 +38,10 @@ class VehiclesController < ApplicationController
             else
               render :edit
             end
-          end
+       
         end
 
-    def show
-        @vehicle = Vehicle.find(params[:id])
-        @review = @vehicle.reviews.build
-      
-        render :show
-    end 
+   
 
     def destroy
         @review = Review.find(params[:id])

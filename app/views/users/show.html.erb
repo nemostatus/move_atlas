@@ -1,7 +1,7 @@
 Welcome to your move atlas <%= current_user.username %> !
 <br>
-<%= link_to "vehicle", '/vehicles/new'  %>
-<%=link_to "vehicles", '/vehicles' %> 
+<%= link_to "New vehicle", '/vehicles/new'  %>
+<%=link_to "Your Vehicles", '/vehicles' %> 
 <h3> Reviews: </h3>
 <% current_user.reviews.each.with_index(1) do |review, i| %>
 <%= "#{i}" %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
