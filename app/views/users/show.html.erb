@@ -4,8 +4,8 @@ Welcome to your move atlas <%= current_user.username %> !
 <%=link_to "vehicles", '/vehicles' %> 
 <h3> Reviews: </h3>
 <% current_user.reviews.each.with_index(1) do |review, i| %>
-<%= "#{i}" %> <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
-<ul>
+<%= "#{i}" %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
+<ul> 
           <li><b>Review:</b> Experience Rating: <%= review.customer_experience_rating%>
            <br>
             Posted: <%= review.created_at %><br>
@@ -16,4 +16,4 @@ Welcome to your move atlas <%= current_user.username %> !
         <br>
         <br>
         <% end %>
-      <% end %>
+        <% end %>

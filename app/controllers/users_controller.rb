@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       if @user.save
         log_in(@user)
         redirect_to @user
-        flash[:success] = "You're all signed up!"
+       
       else
         render :new
       end
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find(params[:id])
+      
     end
     private
     def user_params 
