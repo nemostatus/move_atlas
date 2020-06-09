@@ -2,23 +2,33 @@
 <h1> All vehicles </h1>
  <h2> Clean Vehicles </h2>
  <% @clean_vehicles.each do |vehicle| %>
-  <ul>
-    <li><h4><b>License Plate: <%=  vehicle.plate_number%></h4>From:</b> <%= vehicle.company_name %></li>
-    <%vehicle.users.each do |user|%>
+   <%vehicle.users.each do |user|%>
+      <%if user.id == current_user.id%>
+        <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
       Created by: <%=user.username%>
+    <%else%>
+      License Plate: <%=  vehicle.plate_number%></h4>From:</b> <%= vehicle.company_name %>
       <% end %>
-  </ul>
-  <% end %>
+      <% end %>
+      <% end %>
  
   <h2> Infested Vehicles </h2>
   <% @infested_vehicles.each do |vehicle| %>
-    <ul>
-      <li><h4><b>License Plate: <%=  vehicle.plate_number %></h4>From:</b> <%= vehicle.company_name %></li>
       <%vehicle.users.each do |user|%>
-       Created by: <%=user.username%>
-       <% end %>
-    </ul>
-    <% end %>
-    
-<br><%= link_to "Add New Vehicle", new_vehicle_path %>
+        <%if user.id == current_user.id%>
+        License Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
+        <br>
+      Created by: <%=user.username%>
+    <%else%>
+      License Plate: <%=  vehicle.plate_number%>
+      <br>
+      </h4>From:</b> <%= vehicle.company_name %>
+      <br>
+      Created by: <%=user.username%>
+      <% end %>
+      <% end %>
+      <% end %>
+      <br>
+      <br>
+<%= link_to "Add New Vehicle", new_vehicle_path %>
 

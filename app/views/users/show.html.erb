@@ -1,7 +1,7 @@
 Welcome to your move atlas <%= current_user.username %> !
 <br>
 <%= link_to "New vehicle", '/vehicles/new'  %>
-<%=link_to "Your Vehicles", '/vehicles' %> 
+<%=link_to "All Vehicles", '/vehicles' %> 
 <h3> Reviews: </h3>
 <% current_user.reviews.each.with_index(1) do |review, i| %>
     <% if review.vehicle.present?  %>
