@@ -19,7 +19,11 @@ class Vehicle < ApplicationRecord
     validates :company_name, presence: true
     validates :pick_up_date, presence: true
 
-    def self.clean_vehicle(status)
+    
+  
+    def self.clean_vehicle(status) #how to make data unique to user, vehicle doesnt have user_id foreign key. can i get that
+      #lets see... what data can i put in controller to assist 
+
       where(status: false)
     end
 
