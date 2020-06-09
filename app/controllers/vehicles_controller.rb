@@ -1,6 +1,7 @@
 class VehiclesController < ApplicationController
     def index
-        @vehicles = Vehicle.all 
+        @clean_vehicles = Vehicle.clean_vehicle(params[:status]) 
+         @infested_vehicles = Vehicle.infested_vehicle(params[:status]) 
     end
     
     def new

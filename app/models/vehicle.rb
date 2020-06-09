@@ -19,6 +19,14 @@ class Vehicle < ApplicationRecord
     validates :company_name, presence: true
     validates :pick_up_date, presence: true
 
+    def self.clean_vehicle(status)
+      where(status: false)
+    end
+
+    def self.infested_vehicle(status)
+      where(status: true)
+    end
+
      
     
 end
