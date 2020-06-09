@@ -3,8 +3,9 @@
  <h2> Clean Vehicles </h2>
  <% @clean_vehicles.each do |vehicle| %>
    <%vehicle.users.each do |user|%>
-      <%if user.id == current_user.id%>
-        <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
+      <% if user.id == current_user.id%>
+      <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
+      <br>
       Created by: <%=user.username%>
     <%else%>
       License Plate: <%=  vehicle.plate_number%></h4>From:</b> <%= vehicle.company_name %>
@@ -24,6 +25,7 @@
       <br>
       </h4>From:</b> <%= vehicle.company_name %>
       <br>
+      </h4>Infested with: </b> <%= vehicle.bug_type %>
       Created by: <%=user.username%>
       <% end %>
       <% end %>

@@ -2,6 +2,7 @@ class VehiclesController < ApplicationController
     def index
      @clean_vehicles = Vehicle.clean_vehicle(params[:status])
      @infested_vehicles = Vehicle.infested_vehicle(params[:status])
+     
     end
     
     def new
@@ -34,15 +35,14 @@ class VehiclesController < ApplicationController
         
           def update
             @vehicle = Vehicle.find(params[:id])
-           
-            if @vehicle.update(vehicle_params) 
+            
+             if @vehicle.update(vehicle_params) 
              
               redirect_to user_path(current_user)
             else
               render :edit
             end
-       
-        end
+            end
 
    
 

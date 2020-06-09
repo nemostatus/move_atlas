@@ -6,7 +6,8 @@ class Vehicle < ApplicationRecord
     def reviews_attributes=(reviews_attributes)
         reviews_attributes.values.each do |reviews_attributes|
           
-          self.reviews.update(reviews_attributes)
+          self.reviews.build(reviews_attributes)
+          
         end
       end
 
