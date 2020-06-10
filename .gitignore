@@ -37,3 +37,4 @@ yarn-debug.log*
 /app/test.rb
 /app/test2.rb
 /app/test3.rb
+/app/.env
