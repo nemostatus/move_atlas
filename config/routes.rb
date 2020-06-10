@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
  
   get '/welcome', to: 'sessions#welcome'
+  get "/auth/:provider/callback" => "sessions#oauth"
   get 'authorized', to: 'sessions#page_requires_login'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'

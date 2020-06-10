@@ -20,6 +20,18 @@ class SessionsController < ApplicationController
            redirect_to '/login'
         end
      end
+
+      def oauth
+       
+       
+        def destroy
+          session[:user_id] = nil
+          redirect_to root_url, :notice => "Signed out!"
+        end
+       
+      end
+      
+     end
      def page_requires_login
      end
 
@@ -27,4 +39,7 @@ class SessionsController < ApplicationController
         session[:user_id] = nil
         redirect_to welcome_path
      end
+
+    
+    
 end
