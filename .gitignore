@@ -35,4 +35,5 @@
 yarn-debug.log*
 .yarn-integrity
 /app/test.rb
+/app/test2.rb
 
