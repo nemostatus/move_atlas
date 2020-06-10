@@ -3,13 +3,15 @@ class Vehicle < ApplicationRecord
     has_many :users, through: :reviews
     accepts_nested_attributes_for :reviews
 
+
     def reviews_attributes=(reviews_attributes)
-        reviews_attributes.values.each do |reviews_attributes|
-          
-          self.reviews.build(reviews_attributes)
-          
-        end
+      reviews_attributes.values.each do |reviews_attributes|
+       self.reviews << Review.where(reviews_attributes).first_or_initialize     
       end
+    end
+  
+    
+
 
       
 
@@ -32,6 +34,8 @@ class Vehicle < ApplicationRecord
       where(status: true)
     end
 
-     
-    
+    def self.plate(plate_number)
+      where(plate_number: plate_number)
+    end 
+
 end

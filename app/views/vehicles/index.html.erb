@@ -1,14 +1,22 @@
 <%= button_to "Homepage", user_path(current_user.id), method: :get%>
 <h1> All vehicles </h1>
+
+
  <h2> Clean Vehicles </h2>
  <% @clean_vehicles.each do |vehicle| %>
    <%vehicle.users.each do |user|%>
-      <% if user.id == current_user.id%>
-      <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
-      <br>
-      Created by: <%=user.username%>
-    <%else%>
-      License Plate: <%=  vehicle.plate_number%></h4>From:</b> <%= vehicle.company_name %>
+    <%if user.id == current_user.id%>
+    License Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
+    <br>
+    </h4>From:</b> <%= vehicle.company_name %>
+    <br>
+  Created by: <%=user.username%>
+<%else%>
+  License Plate: <%=  vehicle.plate_number%>
+  <br>
+  </h4>From:</b> <%= vehicle.company_name %>
+  <br>
+      </h4>From:</b> <%= vehicle.company_name %>
       <% end %>
       <% end %>
       <% end %>

@@ -13,6 +13,7 @@ class VehiclesController < ApplicationController
      
     def create
        @vehicle = Vehicle.new(vehicle_params)
+       @vehicle.reviews.build(params[:reviews_attributes])
       if @vehicle.save
        redirect_to vehicles_path(@vehicle)
        else
@@ -30,10 +31,12 @@ class VehiclesController < ApplicationController
         
           @vehicle = Vehicle.find(params[:id])
           @reviews = @vehicle.reviews
+
           render :edit
         end
         
           def update
+       
             @vehicle = Vehicle.find(params[:id])
             
              if @vehicle.update(vehicle_params) 
@@ -63,9 +66,11 @@ class VehiclesController < ApplicationController
 
     private
     def vehicle_params
-        params.require(:vehicle).permit(:plate_number, 
-        :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type, 
-        reviews_attributes: [ :id, :customer_experience_rating,:user_id, :vehicle_id])
-   
-    end 
+      params.require(:vehicle).permit(:plate_number, 
+      :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type, 
+      reviews_attributes: [ :id, :customer_experience_rating,:user_id])
+ 
+  end
+
+
 end
