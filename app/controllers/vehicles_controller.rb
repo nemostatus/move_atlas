@@ -14,7 +14,8 @@ class VehiclesController < ApplicationController
     def create
        @vehicle = Vehicle.new(vehicle_params)
        @vehicle.reviews.build(params[:reviews_attributes])
-      if @vehicle.save
+       binding.pry
+      if @vehicle.save!
        redirect_to vehicles_path(@vehicle)
        else
          render :new

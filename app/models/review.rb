@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
     belongs_to :vehicle
-    belongs_to :user
-  validates :customer_experience_rating, presence: true
+    belongs_to :user, optional: true
+  
   
  
 end

@@ -6,10 +6,9 @@ class Vehicle < ApplicationRecord
 
     def reviews_attributes=(reviews_attributes)
       reviews_attributes.values.each do |reviews_attributes|
-       self.reviews << Review.where(reviews_attributes).first_or_initialize     
+        self.reviews.build(reviews_attributes)
       end
     end
-  
     
 
 
