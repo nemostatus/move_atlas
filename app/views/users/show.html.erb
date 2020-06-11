@@ -15,7 +15,7 @@ Welcome to your move atlas <%= current_user.username %> !
         </ul>
         <%= link_to "edit", edit_user_review_path(current_user, review)  %> 
         <%= button_to "delete", user_review_path(current_user, review), method: :delete %><br>
-        <%= button_to "Logout", '/logout', method: :delete%>
+        
         <% else %>
        <h3> No reviews logged. </h3>
        
@@ -24,5 +24,7 @@ Welcome to your move atlas <%= current_user.username %> !
         <%= button_to "Logout", '/logout', method: :delete%>
        
         <% end %>
+      
         <% end %>
+        <%= button_to "Logout", '/logout', method: :delete%>
         
