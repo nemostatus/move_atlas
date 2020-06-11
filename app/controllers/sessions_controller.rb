@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
  
    
     def welcome
+
         render :welcome
     end
     
@@ -22,6 +23,10 @@ class SessionsController < ApplicationController
      end
 
       def oauth
+        @user = User.find_or_create_from_auth_hash(auth_hash)
+        self.current_user = @user
+        redirect_to '/'
+      end
        
        
         def destroy
@@ -29,9 +34,9 @@ class SessionsController < ApplicationController
           redirect_to root_url, :notice => "Signed out!"
         end
        
-      end
+    
       
-     end
+     
      def page_requires_login
      end
 
@@ -39,6 +44,12 @@ class SessionsController < ApplicationController
         session[:user_id] = nil
         redirect_to welcome_path
      end
+
+     protected
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
 
     
     
