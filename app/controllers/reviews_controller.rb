@@ -1,15 +1,18 @@
 class ReviewsController < ApplicationController
     def index
-        @vehicle= Vehicle.find(params[:vehicle_id])
+       
         @reviews = @vehicle.reviews
     end 
 
     def new
+      @vehicle= Vehicle.find(params[:vehicle_id])
         @review = Review.new
     end
 
     def create
-        @review = Review.new
+      @vehicle= Vehicle.find(params[:vehicle_id])
+        @review = Review.new(review_params)
+        @review.vehicle = @vehicle 
         if @review.save
          redirect_to reviews_path(@review)
          else
@@ -19,16 +22,14 @@ class ReviewsController < ApplicationController
 
         def edit
         
-            @review = Review.find(params[:id])
+          @vehicle= Vehicle.find(params[:vehicle_id])
          
   
             render :edit
           end
           
             def update
-              @review = Review.find(params[:id])
-              
-               if @review.update 
+              if @review.update(review_params)
                
                 redirect_to user_path(current_user)
               else
@@ -41,8 +42,11 @@ class ReviewsController < ApplicationController
         render :show 
     end 
     def destroy
-        @review = current_user.reviews.find(params[:id])
-        @review.destroy
+      @vehicle= Vehicle.find(params[:vehicle_id])
+      @review = Review.find(params[:id])
+        if @review.destroy
         redirect_to user_path(current_user)
+        else
+          render :show
     end
 end
