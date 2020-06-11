@@ -22,7 +22,7 @@
     <%=vehicle.label :bug_type%>
     <%=vehicle.text_field :bug_type%>
     <br>
-    <%=vehicle.fields_for :reviews, Review.new  do |nest| %>
+    <%=vehicle.fields_for :reviews, @review do |nest| %>
       customer experience rating
         <%=nest.number_field :customer_experience_rating%>
         <%= nest.hidden_field :user_id, value: current_user.id %>

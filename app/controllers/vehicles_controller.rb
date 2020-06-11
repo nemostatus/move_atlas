@@ -31,7 +31,9 @@ class VehiclesController < ApplicationController
         def edit
         
           @vehicle = Vehicle.find(params[:id])
-          @reviews = @vehicle.reviews
+          @reviews = @vehicle.reviews.each do |review|
+            @review = review
+          end
 
           render :edit
         end

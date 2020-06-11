@@ -17,11 +17,9 @@ Welcome to your move atlas <%= current_user.username %> !
         <%= button_to "delete", user_review_path(current_user, review), method: :delete %><br>
         
         <% else %>
-       <h3> No reviews logged. </h3>
-       
         <br>
         <br>
-        <%= button_to "Logout", '/logout', method: :delete%>
+        
        
         <% end %>
       
