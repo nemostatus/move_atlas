@@ -1,8 +1,9 @@
 class VehiclesController < ApplicationController
   def index
-    @clean_vehicles = Vehicle.clean_vehicle(params[:status])
-    @infested_vehicles = Vehicle.infested_vehicle(params[:status])
-   
+    
+    @clean_vehicles = current_user.vehicles.where(status:false)
+    @infested_vehicles = current_user.vehicles.where(status:true)
+
    end
     
     def new
@@ -13,6 +14,7 @@ class VehiclesController < ApplicationController
      
     def create
        @vehicle = Vehicle.new(vehicle_params)
+       @vehicle.reviews.build(params[:reviews_attributes])
       if @vehicle.save!
        
        redirect_to vehicles_path(@vehicle)

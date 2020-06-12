@@ -31,7 +31,7 @@ class Vehicle < ApplicationRecord
     end
 
     def self.infested_vehicle(status)
-      where(status: true)
+     where(status: true)
     end
 
    

@@ -23,6 +23,10 @@ end
     resources :reviews
   end
 
+  resources :users do 
+    resources :vehicles
+  end
+
 
 
 
