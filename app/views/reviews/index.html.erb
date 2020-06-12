@@ -1,0 +1,20 @@
+<h3> Reviews: </h3>
+<% current_user.reviews.each.with_index(1) do |review, i| %>
+    <% if review.vehicle.present?  %>
+    <%= "#{i}" %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
+<ul> 
+          <li><b>Review:</b> Experience Rating: <%= review.customer_experience_rating%>
+           <br>
+            Posted: <%= review.created_at %><br>
+        </ul>
+        <%= link_to "edit", edit_vehicle_review_path(review.vehicle, review)  %> 
+        <%= button_to "delete", vehicle_review_path(review.vehicle, review), method: :delete %><br>
+        
+        <% else %>
+        <br>
+        <br>
+        
+       
+        <% end %>
+      
+        <% end %>

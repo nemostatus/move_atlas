@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
     def index
        
-        @reviews = @vehicle.reviews
+        
     end 
 
     def new

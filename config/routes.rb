@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  
   get '/welcome', to: 'sessions#welcome'
   get "/auth/:provider/callback", to: "sessions#oauth"
-  get 'authorized', to: 'sessions#page_requires_login'
+ 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   get '/login', to: 'sessions#new'
@@ -22,5 +22,10 @@ end
   resources :vehicles do
     resources :reviews
   end
+
+
+
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
