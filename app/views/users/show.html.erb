@@ -13,8 +13,8 @@ Welcome to your move atlas <%= current_user.username %> !
            <br>
             Posted: <%= review.created_at %><br>
         </ul>
-        <%= link_to "edit", edit_user_review_path(current_user, review)  %> 
-        <%= button_to "delete", user_review_path(current_user, review), method: :delete %><br>
+        <%= link_to "edit", edit_vehicle_review_path(review.vehicle, review)  %> 
+        <%= button_to "delete", vehicle_review_path(review.vehicle, review), method: :delete %><br>
         
         <% else %>
         <br>

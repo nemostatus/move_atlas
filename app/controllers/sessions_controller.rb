@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
- 
+  
    
     def welcome
 
@@ -23,11 +23,19 @@ class SessionsController < ApplicationController
      end
 
       def oauth
-        @user = User.find_or_create_from_auth_hash(auth_hash)
-        self.current_user = @user
-        redirect_to '/'
-      end
+        if auth_hash = request.env['omniauth.auth']
        
+        o_auth_uid = request.env['omniauth.auth']['provider']['uid'] #key and value how to make both 2 seperate keys? 2 seperate values
+        if user = User.find_by()
+          #so i need to give users a uid attribute? because i can't find a user with it
+         #so the next key is an email i dint give my user an email attribute can i use
+        #a different attribute or should i create email lets see other attributes seesm like github also doesntt have my 
+        #email i have a uid but that seems like information that can be compromised and no way to match it to anything
+   
+          
+       
+      end
+    end
        
         def destroy
           session[:user_id] = nil

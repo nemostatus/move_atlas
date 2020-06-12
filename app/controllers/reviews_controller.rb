@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
 
     def new
       @vehicle= Vehicle.find(params[:vehicle_id])
+     
         @review = Review.new
     end
 
@@ -21,8 +22,9 @@ class ReviewsController < ApplicationController
         end
 
         def edit
-        
+           binding.pry
           @vehicle= Vehicle.find(params[:vehicle_id])
+          
          
   
             render :edit
@@ -49,4 +51,10 @@ class ReviewsController < ApplicationController
         else
           render :show
     end
+  end
+    private
+    def review_params
+    params.require[:reviews].permit[:customer_service_rating, :vehicle_id]
 end
+end
+
