@@ -6,6 +6,22 @@ class SessionsController < ApplicationController
         render :welcome
     end
     
+    def oauth
+      if auth_hash =   request.env['omniauth.auth']
+        o_auth_email = request.env['omniauth.auth']['info']['email']
+       if user = User.find_by(:email => o_auth_email)
+        session[:user_id] = user.id 
+        redirect_to root_path
+      else
+          user = User.new(:username => request.env['omniauth.auth']['info']['nickname'],:email => o_auth_email, :password => SecureRandom.hex)
+          if user.save
+          session[:user_id] = user.id 
+          redirect_to root_path
+      end
+   end
+  end
+  end 
+
     def new
         @user = User.new
     end
@@ -22,31 +38,8 @@ class SessionsController < ApplicationController
         end
      end
 
-      def oauth
-        if auth_hash = request.env['omniauth.auth']
-       
-        o_auth_uid = request.env['omniauth.auth']['provider']['uid'] #key and value how to make both 2 seperate keys? 2 seperate values
-        if user = User.find_by()
-          #so i need to give users a uid attribute? because i can't find a user with it
-         #so the next key is an email i dint give my user an email attribute can i use
-        #a different attribute or should i create email lets see other attributes seesm like github also doesntt have my 
-        #email i have a uid but that seems like information that can be compromised and no way to match it to anything
-   
-          
-       
-      end
-    end
-       
-        def destroy
-          session[:user_id] = nil
-          redirect_to root_url, :notice => "Signed out!"
-        end
-       
-    
-      
      
-     def page_requires_login
-     end
+     
 
      def destroy
         session[:user_id] = nil
@@ -59,6 +52,4 @@ class SessionsController < ApplicationController
     request.env['omniauth.auth']
   end
 
-    
-    
-end
+  end
