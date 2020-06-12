@@ -5,6 +5,11 @@ class VehiclesController < ApplicationController
     @infested_vehicles = current_user.vehicles.where(status:true)
 
    end
+
+   def all
+    @clean_vehicles = Vehicle.clean_vehicle(status:false)
+    @infested_vehicles = Vehicle.infested_vehicle(status:true)
+   end 
     
     def new
         @vehicle = Vehicle.new

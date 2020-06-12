@@ -1,7 +1,7 @@
 Welcome to your move atlas <%= current_user.username %> !
 <br>
 <%= link_to "New vehicle", '/vehicles/new'  %>
-<%=link_to "All Vehicles", '/vehicles' %> 
+<%=link_to "All Vehicles", all_path %> 
 <%=link_to "Your reviews", user_reviews_url(current_user.id) %> 
 <%=link_to "Your vehicles", user_vehicles_url(current_user.id)%>
 

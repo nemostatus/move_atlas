@@ -1,12 +1,8 @@
-<%= button_to "Homepage", user_path(current_user.id), method: :get%>
-<h1> Your vehicles </h1>
-
-
-
 <h2> Clean Vehicles </h2>
 <% @clean_vehicles.each do |vehicle| %>
+    Created by: <%=vehicle.user.username%>
   <br>
-  Vehicle: <%= link_to vehicle.plate_number, vehicle_path(vehicle)%>
+  Vehicle: <%=vehicle.plate_number%>
   <br>
   From:</b> <%= vehicle.company_name %>
   <br>
@@ -17,7 +13,9 @@
     <h2> Infested Vehicles </h2>
     
      <% @infested_vehicles.each do |vehicle| %>
-      Vehicle: <%= link_to vehicle.plate_number,vehicle_path(vehicle)%>
+        Created by: <%=vehicle.user.username%>
+        <br>
+      Vehicle: <%=vehicle.plate_number%>
       <br>
         From:</b> <%= vehicle.company_name %>
          <br>
@@ -26,10 +24,5 @@
         <br>
      <% end %>
 
-    
-    
-
-
 <br>
 <%= link_to "Add New Vehicle", new_vehicle_path %>
-
