@@ -38,4 +38,6 @@ class Vehicle < ApplicationRecord
       where(plate_number: plate_number)
     end 
 
+    
+
 end
