@@ -1,6 +1,6 @@
 <h2> Clean Vehicles </h2>
 <% @clean_vehicles.each do |vehicle| %>
-    Created by: <%=vehicle.user.username%>
+
   <br>
   Vehicle: <%=vehicle.plate_number%>
   <br>
@@ -13,7 +13,7 @@
     <h2> Infested Vehicles </h2>
     
      <% @infested_vehicles.each do |vehicle| %>
-        Created by: <%=vehicle.user.username%>
+        
         <br>
       Vehicle: <%=vehicle.plate_number%>
       <br>

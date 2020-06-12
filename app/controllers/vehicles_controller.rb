@@ -29,7 +29,7 @@ class VehiclesController < ApplicationController
       end
         def show
             @vehicle = Vehicle.find(params[:id])
-            @review = @vehicle.reviews.build
+           
           
             render :show
         end 
@@ -59,12 +59,11 @@ class VehiclesController < ApplicationController
     def destroy
     
         @vehicle = Vehicle.find(params[:id])
-        @vehicle.destroy
-        
-
-        redirect_to user_path(current_user)  #deleted together to avoid an error, fixed it one way however i do want to
-        #can delete both vehicle and its review when i delete vehicle, now i want the option to delete the review but not
-        #the vehicle. How? Is this considered conventional?
+         if @vehicle.destroy
+            redirect_to user_path(current_user)
+            else
+              render :show
+        end
       end
 
 
@@ -75,9 +74,6 @@ class VehiclesController < ApplicationController
     def vehicle_params
       params.require(:vehicle).permit(:id,:plate_number, 
       :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type, 
-      reviews_attributes: [:id,  :customer_experience_rating,:user_id])
- 
-  end
-
-
+      reviews_attributes: [:id, :customer_experience_rating,:user_id])
+    end
 end
