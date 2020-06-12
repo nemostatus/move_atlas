@@ -20,7 +20,7 @@ class Vehicle < ApplicationRecord
     validates :vehicle_type, presence: true
     validates :bug_type, presence: true
     validates :company_name, presence: true
-    validates :pick_up_date, presence: true
+    
 
     
   
