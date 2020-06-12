@@ -1,9 +1,9 @@
 class VehiclesController < ApplicationController
-    def index
-     @clean_vehicles = Vehicle.clean_vehicle(params[:status])
-     @infested_vehicles = Vehicle.infested_vehicle(params[:status])
-    
-    end
+  def index
+    @clean_vehicles = Vehicle.clean_vehicle(params[:status])
+    @infested_vehicles = Vehicle.infested_vehicle(params[:status])
+   
+   end
     
     def new
         @vehicle = Vehicle.new
@@ -13,8 +13,6 @@ class VehiclesController < ApplicationController
      
     def create
        @vehicle = Vehicle.new(vehicle_params)
-
-    
       if @vehicle.save!
        
        redirect_to vehicles_path(@vehicle)
@@ -70,7 +68,7 @@ class VehiclesController < ApplicationController
     def vehicle_params
       params.require(:vehicle).permit(:id,:plate_number, 
       :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type, 
-      reviews_attributes: [  :customer_experience_rating,:user_id])
+      reviews_attributes: [:id,  :customer_experience_rating,:user_id])
  
   end
 
