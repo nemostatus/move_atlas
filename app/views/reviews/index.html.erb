@@ -1,3 +1,5 @@
+
+<%= button_to "Homepage", user_path(current_user.id), method: :get%>
 <h3> Reviews: </h3>
 <% current_user.reviews.each.with_index(1) do |review, i| %>
     <% if review.vehicle.present?  %>

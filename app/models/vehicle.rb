@@ -34,10 +34,7 @@ class Vehicle < ApplicationRecord
       where(status: true)
     end
 
-    def self.plate(plate_number)
-      where(plate_number: plate_number)
-    end 
-
+   
     
 
 end
