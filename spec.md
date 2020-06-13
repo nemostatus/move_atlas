@@ -22,3 +22,4 @@ Confirm:
  []Limited logic in controllers before_Action remove repition and uneeded code where you see it
  []Views use helper methods if appropriate
  []Views use partials if appropriate
+ [] change github to localhost3090 since 3000 wont start
