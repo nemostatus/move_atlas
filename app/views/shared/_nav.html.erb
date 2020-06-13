@@ -4,4 +4,4 @@
 <%=link_to "Your reviews", user_reviews_url(current_user.id) %> 
 <%=link_to "Your vehicles", '/vehicles'%>
 <%= link_to "Homepage", user_path(current_user.id), method: :get%>
-<%= link_to "Logout", '/logout', method: :delete%>
+<%= button_to "Logout", '/logout', method: :delete%>
