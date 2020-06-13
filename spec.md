@@ -23,3 +23,4 @@ Confirm:
  [x]Views use helper methods if appropriate
  [x]Views use partials if appropriate
  [] change github to localhost3090 since 3000 wont start
+ [] create email and pw confirmations
