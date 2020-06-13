@@ -18,8 +18,8 @@ Specs:
  []Include form display of validation errors (form URL e.g. /recipes/new) whats this
 Confirm:
 
- []The application is pretty DRY create partials and before_action: 
- []Limited logic in controllers before_Action remove repition and uneeded code where you see it
- []Views use helper methods if appropriate
- []Views use partials if appropriate
+ [x]The application is pretty DRY create partials and before_action: carefully try DRYing omniauth 
+ [x]Limited logic in controllers before_Action remove repition and uneeded code where you see it need to dry omniauth if theres time but everything else seems DRY
+ [x]Views use helper methods if appropriate
+ [x]Views use partials if appropriate
  [] change github to localhost3090 since 3000 wont start

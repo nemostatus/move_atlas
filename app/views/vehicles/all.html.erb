@@ -5,9 +5,9 @@
   <br>
   Vehicle: <%=vehicle.plate_number%>
   <br>
-  From:</b> <%= vehicle.company_name %>
+  Rented From:</b> <%= vehicle.company_name %>
   <br>
-  License Plate: <%= vehicle.plate_number %>
+  On: <%= vehicle.pick_up_date %>
   <br>
   <%end%>
   
@@ -22,6 +22,7 @@
          <br>
       Infested with: </b> <%= vehicle.bug_type %>
         <br>
+        On: <%= vehicle.pick_up_date %>
         <br>
      <% end %>
 
