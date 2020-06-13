@@ -1,3 +1,4 @@
+<%=render "shared/nav"%>
 <%= form_for([@vehicle, @review]) do |vehicle_review| %>
     <%=vehicle_review.label :customer_experience_rating%>
     <%=vehicle_review.number_field :customer_experience_rating%>

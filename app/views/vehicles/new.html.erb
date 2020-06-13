@@ -1,4 +1,4 @@
-<%= button_to "Homepage", user_path(current_user.id), method: :get%>
+<%=render "shared/nav"%>
 <h1> New vehicle </h1>
 <%= form_for @vehicle do |vehicle| %>
     
