@@ -14,11 +14,11 @@ Specs:
  [X]Include logout (how e.g. Devise)
  [x]Include third party signup/login (how e.g. Devise/OmniAuth)
  [x]Include nested resource show or index (URL e.g. users/2/recipes)
- []Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
- []Include form display of validation errors (form URL e.g. /recipes/new)
+ []Include nested resource "new" form (URL e.g. recipes/1/ingredients/new) vehicles/1/reviews/new(need this)
+ []Include form display of validation errors (form URL e.g. /recipes/new) whats this
 Confirm:
 
- []The application is pretty DRY
- []Limited logic in controllers
+ []The application is pretty DRY create partials and before_action: 
+ []Limited logic in controllers before_Action remove repition and uneeded code where you see it
  []Views use helper methods if appropriate
  []Views use partials if appropriate
