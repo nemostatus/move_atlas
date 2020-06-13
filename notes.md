@@ -45,3 +45,10 @@ lives in model
 
  NEW THOUGHT 
  Instead of just reviewing the bad you also let other users know if the vehicle was good and when that way they can query the most recent experiencce someon had with the vehicle and can tell if theyll have a good experience or not so that means I'll have to add an attr to the table. something like... :status()
+
+ To do :
+ ensure scope methods are actually scope methods do some research
+ dry up code where you can
+ ensure users cant change others info by testing
+ review requirements and review concepts
+ 
