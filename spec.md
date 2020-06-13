@@ -15,7 +15,7 @@ Specs:
  [x]Include third party signup/login (how e.g. Devise/OmniAuth)
  [x]Include nested resource show or index (URL e.g. users/2/recipes)
  []Include nested resource "new" form (URL e.g. recipes/1/ingredients/new) vehicles/1/reviews/new(need this)
- []Include form display of validation errors (form URL e.g. /recipes/new) whats this
+ [x]Include form display of validation errors (form URL e.g. /recipes/new) whats this DONE
 Confirm:
 
  [x]The application is pretty DRY create partials and before_action: carefully try DRYing omniauth 
