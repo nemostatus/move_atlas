@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   
   
 
-  resources :users, only: [:show, :delete] do
+  resources :users do
     resources :reviews
 end
 

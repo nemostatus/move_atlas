@@ -6,8 +6,7 @@ class ReviewsController < ApplicationController
 
   def new
     @vehicle= Vehicle.find(params[:vehicle_id])
-   
-      @review = Review.new
+    @review = Review.new
   end
 
   def create
@@ -24,15 +23,13 @@ class ReviewsController < ApplicationController
       def edit
          
         @vehicle= Vehicle.find(params[:vehicle_id])
-        
-       
-
-          render :edit
-        end
+        @review = Review.find(params[:id])
+       end
         
           def update
-            if @review.update(review_params)
-             
+            @vehicle= Vehicle.find(params[:vehicle_id])
+            @review = Review.find(params[:id])
+          if @review.update(review_params)
               redirect_to user_path(current_user)
             else
               render :edit
@@ -54,7 +51,7 @@ class ReviewsController < ApplicationController
 end
   private
   def review_params
-  params.require[:reviews].permit[:customer_service_rating, :vehicle_id]
+  params.require(:review).permit(:customer_experience_rating, :vehicle_id)
 end
 end
 
