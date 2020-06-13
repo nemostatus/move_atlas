@@ -1,5 +1,6 @@
 <%=render "shared/nav"%>
 <%= form_for([@vehicle, @review]) do |vehicle_review| %>
+    <%= render 'layouts/errors', object: vehicle_review.object %>
     <%=vehicle_review.label :customer_experience_rating%>
     <%=vehicle_review.number_field :customer_experience_rating%>
     <%= vehicle_review.hidden_field :vehicle_id, value: @vehicle.id %>
