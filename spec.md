@@ -22,5 +22,5 @@ Confirm:
  [x]Limited logic in controllers before_Action remove repition and uneeded code where you see it need to dry omniauth if theres time but everything else seems DRY
  [x]Views use helper methods if appropriate
  [x]Views use partials if appropriate
- [] change github to localhost3090 since 3000 wont start
+ 
  [] create email and pw confirmations
