@@ -25,11 +25,16 @@
     <%=vehicle.text_field :bug_type%>
     <br>
     <%=vehicle.fields_for :reviews, @vehicle.reviews.build do |nest| %>
-        customer experience rating
-        <%=nest.number_field :customer_experience_rating%>
+        (1-10)How was the customer service? <%=nest.number_field :customer_service_rating%>
+        <br>
+        (1-10) How was the vehicle?<%=nest.number_field :customer_experience_rating%>
+        <br>
+      
         <%= nest.hidden_field :user_id, value: current_user.id %>
 <% end %>
+
     <%=vehicle.submit%>
+    
     <%end%>
    
    

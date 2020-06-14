@@ -10,7 +10,7 @@ Vehicle plate state: <%=@vehicle.plate_state%>
    <br>
    Rented from: <%=@vehicle.company_name%>
    <br>
-   Does this vehicle have bugs? <%=@vehicle.status%>
+   Does this vehicle have bugs? <%=@vehicle.status == true ? "yes" : "no" %>
    <br>
    This vehicle is suspected to have had <%=@vehicle.bug_type%> around <%=@vehicle.pick_up_date%>.
    <br>

@@ -5,14 +5,15 @@
     <% if review.vehicle.present?  %>
     <%=  %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
 <ul> 
-          <li><b>Review:</b> Experience Rating: <%= review.customer_experience_rating%>
+          <li><b>Review:</b> Vehicle Experience Rating: <%= review.customer_experience_rating%>
            <br>
-            Posted: <%= review.created_at %><br>
+           Customer Support Rating: <%= review.customer_service_rating%>
+           <br>
+           Overall Rating: <%=  review.customer_service_rating +  review.customer_experience_rating%>
+           <br>
+         Posted: <%= review.created_at %><br>
         </ul>
         <%= link_to "edit", edit_vehicle_review_path(review.vehicle, review)  %> 
         <%= button_to "delete", vehicle_review_path(review.vehicle, review), method: :delete %><br>
-        
-        <% else %>
-         <% end %>
-      
+        <% end %>
         <% end %>
