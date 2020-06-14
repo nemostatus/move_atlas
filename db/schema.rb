@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_12_103936) do
+ActiveRecord::Schema.define(version: 2020_06_14_124209) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "customer_experience_rating"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_06_12_103936) do
     t.integer "vehicle_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "customer_service_rating"
     t.index ["user_id"], name: "index_reviews_on_user_id"
     t.index ["vehicle_id"], name: "index_reviews_on_vehicle_id"
   end
