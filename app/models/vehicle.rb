@@ -10,19 +10,14 @@ class Vehicle < ApplicationRecord
       self.reviews.build(reviews_attributes)
     end
   end
-
-
-      
-
-    validates :plate_number, presence: true
+ 
+   validates :plate_number, presence: true
     validates :plate_state, presence: true
     validates :vehicle_type, presence: true
     validates :bug_type, presence: true
     validates :company_name, presence: true
     
 
-    
-  
     def self.clean_vehicle(status) #how to make data unique to user, vehicle doesnt have user_id foreign key. can i get that
       #lets see... what data can i put in controller to assist 
 
@@ -32,8 +27,4 @@ class Vehicle < ApplicationRecord
     def self.infested_vehicle(status)
      where(status: true)
     end
-
-   
-    
-
-end
+  end

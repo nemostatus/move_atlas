@@ -2,15 +2,15 @@ class VehiclesController < ApplicationController
   before_action :find_vehicle, except:[:index,:all,:new,:create]
   def index
 
-    @clean_vehicles = current_user.vehicles.where(status:false)
-    @infested_vehicles = current_user.vehicles.where(status:true)
+    @clean_vehicles = current_user.vehicles.where(status:false).order("company_name ASC")
+    @infested_vehicles = current_user.vehicles.where(status:true).order("company_name ASC")
    render :index
    end
 
    def all
 
-    @clean_vehicles = Vehicle.clean_vehicle(status:false)
-    @infested_vehicles = Vehicle.infested_vehicle(status:true)
+    @clean_vehicles = Vehicle.clean_vehicle(status:false).order("company_name ASC")
+    @infested_vehicles = Vehicle.infested_vehicle(status:true).order("company_name ASC")
     render :all 
    end 
     
