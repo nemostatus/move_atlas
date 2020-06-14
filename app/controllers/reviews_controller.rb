@@ -34,7 +34,7 @@ end
 
   private
   def review_params
-  params.require(:review).permit(:customer_experience_rating, :vehicle_id)
+  params.require(:review).permit(:customer_experience_rating, :vehicle_id, :customer_service_rating)
   end
 
   def find_vehicle

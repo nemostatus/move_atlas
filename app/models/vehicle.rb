@@ -2,6 +2,8 @@ class Vehicle < ApplicationRecord
     has_many :reviews 
     has_many :users, through: :reviews
   accepts_nested_attributes_for :reviews, allow_destroy: true
+  validates :plate_number, :plate_state, :vehicle_type, :bug_type, :company_name, presence: true
+ validates :pick_up_date, format: { with: /^\d{4}-\d{2}-\d{2}$/, multiline: true }
 
 
   def reviews_attributes=(reviews_attributes)
@@ -11,11 +13,7 @@ class Vehicle < ApplicationRecord
     end
   end
  
-   validates :plate_number, presence: true
-    validates :plate_state, presence: true
-    validates :vehicle_type, presence: true
-    validates :bug_type, presence: true
-    validates :company_name, presence: true
+ 
     
 
     def self.clean_vehicle(status) #how to make data unique to user, vehicle doesnt have user_id foreign key. can i get that
