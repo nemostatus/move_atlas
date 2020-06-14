@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :vehicles, through: :reviews
 
     validates :username, :email, presence: true, uniqueness: true
+    validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
    
     
     

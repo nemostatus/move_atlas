@@ -9,13 +9,14 @@ Specs:
  [X]The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
  user -username  vehicle -plate number
  [X]Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item) validations in models
- [x]Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes) vehicles has both clean and infested scopes which are chainable using order by
+ [x]Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature
+  e.g. User.most_recipes URL: /users/most_recipes) vehicles has both clean and infested scopes which are chainable using order()
  [X]Include signup (how e.g. Devise) signup available 
  [X]Include login (how e.g. Devise) login available 
  [X]Include logout (how e.g. Devise) logout available 
  [x]Include third party signup/login (how e.g. Devise/OmniAuth) omniauth using github
- [x]Include nested resource show or index (URL e.g. users/2/recipes)
- [x]Include nested resource "new" form (URL e.g. recipes/1/ingredients/new) users/1/vehicles/new(need this)
+ [x]Include nested resource show or index (URL e.g. users/2/recipes) users/1/reviews
+ [x]Include nested resource "new" form (URL e.g. recipes/1/ingredients/new) users/1/vehicles/new
  [x]Include form display of validation errors (form URL e.g. /recipes/new) whats this DONE
 Confirm:
 
@@ -24,7 +25,4 @@ Confirm:
  [x]Views use helper methods if appropriate
  [x]Views use partials if appropriate
  
- []
- 
- 
- email confirmation so theres no mistake on users end
+ []email confirmation so theres no mistake on users end
