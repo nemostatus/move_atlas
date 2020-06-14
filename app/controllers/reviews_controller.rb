@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_vehicle, only: [:edit, :update]
-  before_action :find_review, only: [:edit, :update]
+  before_action :find_review, only: [:edit, :update, :destroy]
 
      def index
      render :index
@@ -34,7 +34,7 @@ end
 
   private
   def review_params
-  params.require(:review).permit(:customer_experience_rating, :vehicle_id, :customer_service_rating)
+  params.require(:review).permit(:customer_experience_rating, :vehicle_id, :customer_service_rating, :_destroy)
   end
 
   def find_vehicle
