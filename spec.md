@@ -25,4 +25,3 @@ Confirm:
  [x]Views use helper methods if appropriate
  [x]Views use partials if appropriate
  
- []email confirmation so theres no mistake on users end

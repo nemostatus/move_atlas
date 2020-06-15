@@ -1,7 +1,3 @@
-<%=render "shared/nav"%>
+
 <%=render 'reviews/form'%>
-    <%=vehicle_review.label :customer_experience_rating%>
-    <%=vehicle_review.number_field :customer_experience_rating%>
-    <%= vehicle_review.hidden_field :vehicle_id, value: @vehicle.id %>
-    <%=vehicle_review.submit%>
-    <% end %>
+   

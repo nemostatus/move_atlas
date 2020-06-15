@@ -1,7 +1,7 @@
 
 <%=render "shared/nav"%>
 <h3> Reviews: </h3>
-<% current_user.reviews.each do |review| %>
+<% @reviews.each do |review| %>
     <% if review.vehicle.present?  %>
     <%=  %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
 <ul> 
@@ -9,7 +9,7 @@
            <br>
            Customer Support Rating: <%= review.customer_service_rating%>
            <br>
-           Overall Rating: <%=  review.customer_service_rating +  review.customer_experience_rating%>
+           Overall Rating: <%=  review.customer_service_rating +  review.customer_experience_rating%>/20
            <br>
          Posted: <%= review.created_at %><br>
         </ul>

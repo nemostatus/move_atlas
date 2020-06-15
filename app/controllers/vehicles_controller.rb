@@ -4,7 +4,7 @@ class VehiclesController < ApplicationController
 
     @clean_vehicles = current_user.vehicles.where(status:false).order("company_name ASC")
     @infested_vehicles = current_user.vehicles.where(status:true).order("company_name ASC")
-   render :index
+
    end
 
    def all
@@ -16,6 +16,7 @@ class VehiclesController < ApplicationController
     
     def new
      @vehicle = Vehicle.new
+     @vehicle.reviews.build(params[:reviews_attributes])
      render :new
     end
      
@@ -29,34 +30,15 @@ class VehiclesController < ApplicationController
      end
         
       def show
-    
+       @review = @vehicle.reviews.build
+       render :show
       end 
     
-      def edit
-      
-      end
-        
-       def update
-       if @vehicle.update(vehicle_params) 
-       redirect_to user_path(current_user)
-       else
-       render :edit
-       end
-       end
-
-   
-
-    def destroy
-     if @vehicle.destroy
-     redirect_to user_path(current_user)
-      else
-       render :show
-     end
-     end
+    
   private
     def vehicle_params
       params.require(:vehicle).permit(:plate_number, :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type, 
-      reviews_attributes: [:id,:customer_experience_rating,:user_id,:customer_service_rating,:_destroy])
+      reviews_attributes: [:customer_experience_rating,:user_id,:customer_service_rating,:_destroy])
     end
 
     def find_vehicle 

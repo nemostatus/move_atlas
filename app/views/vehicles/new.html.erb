@@ -12,7 +12,7 @@
     <%=vehicle.label :vehicle_type%>
     <%=vehicle.text_field :vehicle_type%>
     <br>
-    Pick up date:
+    Pick up date (YYYY-MM-DD):
     <%=vehicle.text_field :pick_up_date%>
     <br>
     What rental company did you use?
@@ -21,7 +21,7 @@
     Do you suspect this vehicle of having bugs? 
     <%=vehicle.check_box :status%>
     <br>
-    <%=vehicle.label :bug_type%>
+    If there are no bugs put none.
     <%=vehicle.text_field :bug_type%>
     <br>
     <%=vehicle.fields_for :reviews, @vehicle.reviews.build do |nest| %>
