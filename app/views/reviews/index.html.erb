@@ -13,7 +13,10 @@
            <br>
          Posted: <%= review.created_at %><br>
         </ul>
+         Reviewed by: <%=  review.user.username   %>
+        <br>
         <%= link_to "edit", edit_vehicle_review_path(review.vehicle, review)  %> 
         <%= button_to "delete", vehicle_review_path(review.vehicle, review), method: :delete %><br>
         <% end %>
         <% end %>
+        
