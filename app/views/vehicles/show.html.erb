@@ -14,6 +14,8 @@ Vehicle plate state: <%=@vehicle.plate_state%>
    <br>
    This vehicle is suspected to have had <%=@vehicle.bug_type%> around <%=@vehicle.pick_up_date%>.
    <br>
+   Reviewed by <%= @vehicle.users.count %> Users      
+  <br>
    Reviews: 
    <%=link_to "Reviews", vehicle_reviews_path(@vehicle)%>
    <br>

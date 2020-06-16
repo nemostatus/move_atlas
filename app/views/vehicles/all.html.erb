@@ -1,22 +1,21 @@
 <%=render "shared/nav"%>
-<h1> All Vehicles </h1>
+<h1> Your Vehicles </h1>
 <h2> Clean Vehicles </h2>
 <% @clean_vehicles.each do |vehicle| %>
-
-  <br>
+<br>
   Vehicle: <%=vehicle.plate_number%>
   <br>
   Rented From:</b> <%= vehicle.company_name %>
   <br>
   On: <%= vehicle.pick_up_date %>
   <br>
+  <%= link_to "Edit", edit_vehicle_path(vehicle)%>
+  <%= button_to "Delete", vehicle_path(vehicle), method: :delete %> 
   <%end%>
   
     <h2> Infested Vehicles </h2>
-    
-     <% @infested_vehicles.each do |vehicle| %>
-        
-        <br>
+    <% @infested_vehicles.each do |vehicle| %>
+         <br>
       Vehicle: <%=vehicle.plate_number%>
       <br>
         From:</b> <%= vehicle.company_name %>
@@ -25,7 +24,8 @@
         <br>
         On: <%= vehicle.pick_up_date %>
         <br>
+        <%= link_to "Edit", edit_vehicle_path(vehicle)%>
+        <%= button_to "Delete", vehicle_path(vehicle), method: :delete %> 
      <% end %>
-
-<br>
+     <br>
 

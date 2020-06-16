@@ -8,8 +8,8 @@ class VehiclesController < ApplicationController
 
    def all
 
-    @clean_vehicles = Vehicle.clean_vehicle(status:false).order("company_name ASC")
-    @infested_vehicles = Vehicle.infested_vehicle(status:true).order("company_name ASC")
+    @clean_vehicles = current_user.vehicles.where(status: false).order("company_name ASC")
+    @infested_vehicles = current_user.vehicles.where(status:true).order("company_name ASC")
     render :all 
    end 
     
@@ -32,6 +32,26 @@ class VehiclesController < ApplicationController
        @review = @vehicle.reviews.build
        render :show
       end 
+
+      def edit
+      render :edit
+      end
+      
+        def update
+        if @vehicle.update(vehicle_params) 
+        redirect_to user_path(current_user)
+          else
+            render :edit
+          end
+          end
+
+      def destroy
+         if @vehicle.destroy
+            redirect_to user_path(current_user)
+            else
+              render :show
+        end
+      end
     
     
   private

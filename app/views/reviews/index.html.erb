@@ -15,6 +15,7 @@
         </ul>
          Reviewed by: <%=  review.user.username   %>
         <br>
+        
         <% if review.user == current_user %>
         <%= link_to "edit", edit_vehicle_review_path(review.vehicle, review)  %> 
         <%= button_to "delete", vehicle_review_path(review.vehicle, review), method: :delete %><br>

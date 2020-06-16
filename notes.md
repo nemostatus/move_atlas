@@ -48,7 +48,5 @@ lives in model
 
  To do :
  ensure scope methods are actually scope methods do some research #yes its just syntactic sugar the other way
- dry up code where you can #start here
- ensure users cant change others info by testing
- review requirements and review concepts
+I want to create a link that goes to a page for all of the users vehicles so that 
  
