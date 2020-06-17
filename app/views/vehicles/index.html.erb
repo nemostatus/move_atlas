@@ -3,11 +3,11 @@
 
 <h2> Clean Vehicles </h2>
 <% @clean_vehicles.each do |vehicle| %>
-  Vehicle Type: <%=vehicle.vehicle_type%>
-  <br>
   Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle)%>
   <br>
-  From:</b> <%= vehicle.company_name %>
+  Rented From:</b> <%= vehicle.company_name %>
+  <br>
+  On: <%= vehicle.pick_up_date %>
   <br>
   
   <br>
@@ -17,19 +17,19 @@
     
      <% @infested_vehicles.each do |vehicle| %>
   
+      Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle)%>
       <br>
-      Vehicle Type: <%=vehicle.vehicle_type%>
+      Rented From:</b> <%= vehicle.company_name %>
       <br>
-      Vehicle: <%= link_to vehicle.plate_number,vehicle_path(vehicle)%>
+      On: <%= vehicle.pick_up_date %>
       <br>
-        From:</b> <%= vehicle.company_name %>
          <br>
       Infested with: </b> <%= vehicle.bug_type %>
         <br>
         <br>
        
        <% end %>
-       <%= link_to "Add New Vehicle", new_vehicle_path %>
+   
        
 
 

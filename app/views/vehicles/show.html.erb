@@ -12,14 +12,12 @@ Vehicle plate state: <%=@vehicle.plate_state%>
    <br>
    Does this vehicle have bugs? <%=@vehicle.status == true ? "yes" : "no" %>
    <br>
-   This vehicle is suspected to have had <%=@vehicle.bug_type%> around <%=@vehicle.pick_up_date%>.
+   Bug Type <%=@vehicle.status == true ? @vehicle.bug_type : "NONE" %>
    <br>
-   Reviewed by <%= @vehicle.users.count %> Users      
+   Reviewed by <%= @vehicle.users.uniq.count %> Users      
   <br>
    Reviews: 
    <%=link_to "Reviews", vehicle_reviews_path(@vehicle)%>
    <br>
 
-
-
-   <%= link_to "Add A Review", new_vehicle_review_path(@vehicle)%>
+<%= link_to "Add A Review", new_vehicle_review_path(@vehicle)%>

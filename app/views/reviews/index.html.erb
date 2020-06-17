@@ -1,6 +1,6 @@
 
 <%=render "shared/nav"%>
-<h3> Reviews: </h3>
+
 <% @reviews.each do |review| %>
     <% if review.vehicle.present?  %>
     <%=  %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>

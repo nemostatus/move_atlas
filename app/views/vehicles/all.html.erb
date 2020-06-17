@@ -3,15 +3,15 @@
 <h2> Clean Vehicles </h2>
 <% @clean_vehicles.each do |vehicle| %>
 <br>
-  Vehicle: <%=vehicle.plate_number%>
+  Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle)%>
   <br>
   Rented From:</b> <%= vehicle.company_name %>
   <br>
   On: <%= vehicle.pick_up_date %>
   <br>
-  <%= link_to "Edit", edit_vehicle_path(vehicle)%>
-  <%= button_to "Delete", vehicle_path(vehicle), method: :delete %> 
+  
   <%end%>
+ 
   
     <h2> Infested Vehicles </h2>
     <% @infested_vehicles.each do |vehicle| %>
