@@ -1,5 +1,6 @@
 <%=render "shared/nav"%>
-<br>
+<u><h2><%=@vehicle.plate_number%></h2></u>
+
 Vehicle plate number: <%=@vehicle.plate_number%>
 <br>
 Vehicle plate state: <%=@vehicle.plate_state%>
@@ -16,7 +17,6 @@ Vehicle plate state: <%=@vehicle.plate_state%>
    <br>
    Reviewed by <%= @vehicle.users.uniq.count %> Users      
   <br>
-   Reviews: 
    <%=link_to "Reviews", vehicle_reviews_path(@vehicle)%>
    <br>
 

@@ -1,5 +1,5 @@
 <%=render "shared/nav"%>
-<h1> Your Vehicles </h1>
+<u><h1> Your Vehicles </h1></u>
 <h2> Clean Vehicles </h2>
 <% @clean_vehicles.each do |vehicle| %>
 <br>
@@ -13,7 +13,7 @@
   <%end%>
  
   
-    <h2> Infested Vehicles </h2>
+ <h2> Infested Vehicles </h2>
     <% @infested_vehicles.each do |vehicle| %>
          <br>
       Vehicle: <%=vehicle.plate_number%>

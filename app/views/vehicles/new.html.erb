@@ -1,6 +1,6 @@
 <%=render "shared/nav"%>
 
-<h1> New vehicle </h1>
+<u><h1> New vehicle </h1></u>
 <%= form_for @vehicle do |vehicle| %>
   <%= render 'layouts/errors', object: vehicle.object %>
     <%=vehicle.label :plate_number%>
