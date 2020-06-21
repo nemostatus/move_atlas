@@ -2,5 +2,6 @@
 <%= link_to "Create New vehicle", new_user_vehicle_path(current_user.id)  %>
 <%=link_to "All Vehicles",  all_path %>
 <%=link_to "Your Vehicle Reviews", '/vehicles' %> 
+<%= link_to " Highest rated vehicles", highestRatings_path %>
 <%= link_to "Homepage", user_path(current_user.id), method: :get%>
 <%= button_to "Logout", '/logout', method: :delete%>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  
   get '/welcome', to: 'sessions#welcome'
   get "/auth/:provider/callback", to: "sessions#oauth"
- 
+  get "/highestRatings", to: "reviews#highest_rated"
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   get '/login', to: 'sessions#new'
