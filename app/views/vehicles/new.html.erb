@@ -1,7 +1,7 @@
 <%=render "shared/nav"%>
 
 <u><h1> New vehicle </h1></u>
-<%= form_for @vehicle do |vehicle| %>
+<%= form_for @vehicle, html: { autocomplete: "off" }  do |vehicle| %>
   <%= render 'layouts/errors', object: vehicle.object %>
     <%=vehicle.label :plate_number%>
     <%=vehicle.text_field :plate_number %>
