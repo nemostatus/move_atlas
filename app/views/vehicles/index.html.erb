@@ -1,5 +1,5 @@
 <%=render "shared/nav"%>
-<u><h1> All vehicles </h1></u>
+<u><h1> Your vehicles </h1></u>
 
 <h2> Clean Vehicles </h2>
 <% @clean_vehicles.each do |vehicle| %>
@@ -23,7 +23,6 @@
       <br>
       On: <%= vehicle.pick_up_date %>
       <br>
-         <br>
       Infested with: </b> <%= vehicle.bug_type %>
         <br>
         <br>

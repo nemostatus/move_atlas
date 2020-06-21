@@ -15,9 +15,9 @@ Specs:
  [X]Include login (how e.g. Devise) login available 
  [X]Include logout (how e.g. Devise) logout available 
  [x]Include third party signup/login (how e.g. Devise/OmniAuth) omniauth using github
- [x]Include nested resource show or index (URL e.g. users/2/recipes) users/1/reviews
- [x]Include nested resource "new" form (URL e.g. recipes/1/ingredients/new) users/1/vehicles/new
- [x]Include form display of validation errors (form URL e.g. /recipes/new) whats this DONE
+ [x]Include nested resource show or index (URL e.g. users/2/recipes) /vehicles/6/reviews
+ [x]Include nested resource "new" form (URL e.g. recipes/1/ingredients/new) /vehicles/5/reviews/new
+ [x]Include form display of validation errors (form URL e.g. /recipes/new)  DONE
 Confirm:
 
  [x]The application is pretty DRY create partials and before_action: carefully try DRYing omniauth 
