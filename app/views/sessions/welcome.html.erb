@@ -8,6 +8,6 @@ You are already logged in <%=current_user.username%> would you like to go to you
 <%= button_to "Login", '/login', method: :get%>
 <%= button_to "Sign Up", '/signup', method: :get%>
 <%= button_to "Logout", '/logout', method: :delete%>
-<%=link_to "Sign up or login with Github", "/auth/github"%>
+<%=link_to "Sign up or login with Github", "/auth/github"%> (Must have email set in Github profile settings)
 
 
