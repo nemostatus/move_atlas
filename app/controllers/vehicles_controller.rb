@@ -1,13 +1,11 @@
 class VehiclesController < ApplicationController
   before_action :find_vehicle, except:[:index,:all,:new,:create]
-  def index
-    
+    def index
     @clean_vehicles = current_user.vehicles.where(status: false).order("company_name ASC")
     @infested_vehicles = current_user.vehicles.where(status:true).order("company_name ASC")
     end
 
     def all
-
     @clean_vehicles =  Vehicle.clean_vehicle(status:false).order("company_name ASC")
     @infested_vehicles =  Vehicle.infested_vehicle(status:true).order("company_name ASC")
     render :all 
@@ -25,25 +23,25 @@ class VehiclesController < ApplicationController
     redirect_to vehicles_path(@vehicle)
       else
      render :new
-     end 
-     end
+    end 
+    end
         
-      def show
-       @review = @vehicle.reviews.build
-       render :show
-      end 
+    def show
+      @review = @vehicle.reviews.build
+      render :show
+    end 
 
-      def edit
-      render :edit
-      end
+    def edit
+     render :edit
+    end
       
-        def update
-        if @vehicle.update(vehicle_params) 
-       redirect_to user_path(current_user)
-          else
-            render :edit
-          end
-          end
+    def update
+      if @vehicle.update(vehicle_params) 
+     redirect_to user_path(current_user)
+      else
+       render :edit
+     end
+     end
 
       def destroy
          if @vehicle.destroy

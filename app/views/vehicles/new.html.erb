@@ -3,7 +3,7 @@
 <u><h1> New vehicle </h1></u>
 <%= form_for @vehicle, html: { autocomplete: "off" }  do |vehicle| %>
   <%= render 'layouts/errors', object: vehicle.object %>
-    <%=vehicle.label :plate_number%>
+    <%=vehicle.label :plate_number%> First 4 characters of license plate.
     <%=vehicle.text_field :plate_number %>
   <br>
     <%=vehicle.label :plate_state%>
@@ -21,7 +21,7 @@
     Do you suspect this vehicle of having bugs? 
     <%=vehicle.check_box :status%>
     <br>
-    If there are no bugs put none.
+    Bug type? If there are no bugs put none.
     <%=vehicle.text_field :bug_type%>
     <br>
     <%=vehicle.fields_for :reviews, @vehicle.reviews.build do |nest| %>

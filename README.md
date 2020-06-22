@@ -1,5 +1,4 @@
-I'm not sure why but I have to run my app on localhost3010 by typing rails server -p 3010 in the terminal.
-so if you're having trouble on localhost3000 try  3010
+Run this app using rails S cmd on local host 3000
 
 
 This is on the homepage of app.
