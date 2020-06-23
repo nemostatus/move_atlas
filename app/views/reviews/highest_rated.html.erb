@@ -3,6 +3,7 @@
 <h1> Highest Rated Vehicles </h1>
 
 <ol><% @highest_rated.each do |review|%>
+  <%if review.exists%>
  <li><%=link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %>
    <%end%>
-    
+   <%end%> 

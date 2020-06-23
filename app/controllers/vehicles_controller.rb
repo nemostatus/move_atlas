@@ -8,13 +8,13 @@ class VehiclesController < ApplicationController
     def all
     @clean_vehicles =  Vehicle.clean_vehicle(status:false).order("company_name ASC")
     @infested_vehicles =  Vehicle.infested_vehicle(status:true).order("company_name ASC")
-    render :all 
+   # render :all 
     end 
     
     def new
      @vehicle = Vehicle.new
      @vehicle.reviews.build(params[:reviews_attributes])
-     render :new
+     #render :new
     end
      
     def create
@@ -27,8 +27,9 @@ class VehiclesController < ApplicationController
     end
         
     def show
+      @vehicle = Vehicle.find(params[:id])
       @review = @vehicle.reviews.build
-      render :show
+     # render :show
     end 
 
     def edit
@@ -55,7 +56,7 @@ class VehiclesController < ApplicationController
   private
     def vehicle_params
       params.require(:vehicle).permit(:plate_number, :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type, 
-      reviews_attributes: [:customer_experience_rating,:user_id,:customer_service_rating,:_destroy])
+      reviews_attributes: [:customer_experience_rating,:user_id,:customer_service_rating])#,:_destroy]
     end
 
     def find_vehicle 

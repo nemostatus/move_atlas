@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
      def index
  
      @reviews = @vehicle.reviews
-      render :index
+     # render :index
      end 
 
      def highest_rated
