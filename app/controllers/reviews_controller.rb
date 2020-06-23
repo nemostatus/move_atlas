@@ -18,13 +18,14 @@ class ReviewsController < ApplicationController
      def new
       
       @review = Review.new
-   
+
       render :new
      end 
 
      def create
       @review = @vehicle.reviews.build(review_params)
       @review.user = current_user
+     
       if @review.save
         redirect_to vehicle_path(@vehicle)
       else 
@@ -32,10 +33,10 @@ class ReviewsController < ApplicationController
       end
      end
 
-     def show
-     @vehicle = @review.vehicle 
-      render :show
-     end
+     #def show
+     #@vehicle = @review.vehicle 
+      #render :show
+     #end
 
     
       def edit
