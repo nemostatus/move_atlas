@@ -56,7 +56,7 @@ class VehiclesController < ApplicationController
   private
     def vehicle_params
       params.require(:vehicle).permit(:plate_number, :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type, 
-      reviews_attributes: [:customer_experience_rating,:user_id,:customer_service_rating])#,:_destroy]
+      reviews_attributes: [:customer_experience_rating,:user_id,:vehicle_id,:customer_service_rating])#,:_destroy]
     end
 
     def find_vehicle 
