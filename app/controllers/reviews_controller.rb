@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
      def highest_rated
       @highest_rated = Review.highest_rated
 
-      
+   
      end
     
      
