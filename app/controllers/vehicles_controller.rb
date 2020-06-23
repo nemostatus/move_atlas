@@ -28,7 +28,7 @@ class VehiclesController < ApplicationController
         
     def show
      # @vehicle = Vehicle.find(params[:id])
-      @review = @vehicle.reviews.build
+      #@review = @vehicle.reviews.build
      # render :show
     end 
 
