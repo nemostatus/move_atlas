@@ -27,30 +27,28 @@ class VehiclesController < ApplicationController
     end
         
     def show
-     # @vehicle = Vehicle.find(params[:id])
-      #@review = @vehicle.reviews.build
-     # render :show
+ 
     end 
 
-    def edit
-     render :edit
-    end
+    #def edit
+     #render :edit
+    #end
       
-    def update
-      if @vehicle.update(vehicle_params) 
-     redirect_to user_path(current_user)
-      else
-       render :edit
-     end
-     end
+    #def update
+     # if @vehicle.update(vehicle_params) 
+     #redirect_to user_path(current_user)
+     # else
+     #  render :edit
+     #end
+     #end
 
-      def destroy
-         if @vehicle.destroy
-            redirect_to user_path(current_user)
-            else
-              render :show
-        end
-      end
+      #def destroy
+         #if @vehicle.destroy
+          #  redirect_to user_path(current_user)
+         #   else
+        #      render :show
+       # end
+      #end
     
     
   private

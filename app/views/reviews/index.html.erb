@@ -15,12 +15,14 @@
          Posted on: <%= review.created_at.strftime("%Y-%m-%d") %><br>
          Reviewed by: <%=  review.user.username   %>
         </ul>
-        <% if review.user == current_user && review != review.vehicle.reviews.first %>
+      
+        <% if review.user == current_user  %> 
         <%= link_to "Edit", edit_vehicle_review_path(review.vehicle, review)  %> 
         <%= button_to "delete", vehicle_review_path(review.vehicle, review), method: :delete %>
         <br>
         <% end %>
         <% end %>
         <% end %>
+
         
         

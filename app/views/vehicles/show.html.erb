@@ -20,15 +20,9 @@ Vehicle plate state: <%=@vehicle.plate_state%>
    <%=link_to "Reviews", vehicle_reviews_path(@vehicle)%>
    <br>
    <%= link_to "Add A Review", new_vehicle_review_path(@vehicle)%>
-   <br>
-   <%  first_user = @vehicle.users.first %>
-   <% if current_user == first_user %>
-   <%= link_to "Edit", edit_vehicle_path(@vehicle)  %> 
-   <br>
-   <%= button_to "Delete Vehicle", vehicle_path(@vehicle), method: :delete %>    
-  
-   <%end%>  
-                                          
+
+
+                            
 
 
 
