@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'sessions#welcome'
+  root to: 'application#home'
 
   resources :users, only: [:new, :create, :show]
  
