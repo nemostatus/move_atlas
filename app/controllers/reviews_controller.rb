@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :find_vehicle, only: [:new,:index,:create,:edit]
   before_action :find_review, only: [:show,:edit, :update, :destroy]
+  before_action :current_user, only: [:edit, :destroy]
 
      def index
  
@@ -43,9 +44,13 @@ class ReviewsController < ApplicationController
         
         #@vehicle= Vehicle.find(params[:vehicle_id])
         #@review = Review.find(params[:id])
-        @vehicle = @review.vehicle 
+         @vehicle = @review.vehicle 
+         if @review.user == current_user
+          render :edit 
+         else 
+          redirect_to  user_path(current_user)
        end
-        
+       end
           def update
             #@vehicle= Vehicle.find(params[:vehicle_id])
             #@review = Review.find(params[:id])
