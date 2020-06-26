@@ -13,6 +13,7 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
+
     if @vehicle.save
       redirect_to vehicles_path(@vehicle)
     else
@@ -27,7 +28,7 @@ class VehiclesController < ApplicationController
 
   def vehicle_params
     params.require(:vehicle).permit(:plate_number, :plate_state, :vehicle_type, :pick_up_date, :company_name, :status, :bug_type,
-                                    reviews_attributes: [:customer_experience_rating, :vehicle_id, :customer_service_rating])
+                                    reviews_attributes: [:customer_experience_rating, :vehicle_id, :user_id, :customer_service_rating])
   end
 
   def find_vehicle

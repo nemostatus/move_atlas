@@ -13,18 +13,11 @@ Rails.application.routes.draw do
 
   get '/logout', to: 'sessions#destroy'
   
-
-  resources :users do
-    resources :reviews
-end
-
-  resources :vehicles do
+resources :vehicles do
     resources :reviews
   end
 
-  resources :users do 
-    resources :vehicles
-  end
+
 
 
 
