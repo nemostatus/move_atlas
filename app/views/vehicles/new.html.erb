@@ -24,7 +24,7 @@
     Bug type? If there are no bugs put none.
     <%= vehicle.text_field :bug_type %>
     <br>
-    <%= vehicle.fields_for :reviews, @vehicle.reviews.build do |nest| %>
+    <%= vehicle.fields_for :reviews do |nest| %>
         (1-10)How was the customer service? <%= nest.number_field :customer_service_rating %>
         <br>
         (1-10) How was the vehicle?<%= nest.number_field :customer_experience_rating %>
