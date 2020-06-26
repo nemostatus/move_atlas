@@ -6,11 +6,6 @@ class VehiclesController < ApplicationController
     @infested_vehicles = current_user.vehicles.where(status: true).order("company_name ASC")
   end
 
-  def all
-    @clean_vehicles = Vehicle.all_clean
-    @infested_vehicles = Vehicle.all_infested
-  end
-
   def new
     @vehicle = Vehicle.new
     @vehicle.reviews.build(params[:reviews_attributes])
