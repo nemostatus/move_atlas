@@ -1,5 +1,5 @@
 
-<%= link_to "Create New vehicle", new_user_vehicle_path(current_user.id) %>
+<%= link_to "Create New vehicle", new_vehicle_path%>
 <%= link_to "Your Vehicle Reviews", "/vehicles" %> 
-<%= link_to "Homepage", user_path(current_user.id), method: :get %>
-<%= button_to "Logout", "/logout", method: :delete %>
+<%= link_to "Homepage", user_path(current_user.id) %>
+<%= link_to "Logout", logout_path, method: :delete %>
