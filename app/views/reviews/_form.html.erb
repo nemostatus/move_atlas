@@ -1,13 +1,13 @@
-<%=render "shared/nav"%>
+<%= render "shared/nav" %>
 <%= form_for([@vehicle, @review]) do |vehicle_review| %>
-    <%= render 'layouts/errors', object: vehicle_review.object %>
+    <%= render "layouts/errors", object: vehicle_review.object %>
     (1-10)How was your vehicle?
-    <%=vehicle_review.number_field :customer_experience_rating%>
+    <%= vehicle_review.number_field :customer_experience_rating %>
     <br>
     (1-10)How was the customer service? 
-        <%=vehicle_review.number_field :customer_service_rating%>
+        <%= vehicle_review.number_field :customer_service_rating %>
         <br>
    <%= vehicle_review.hidden_field :vehicle_id, value: @vehicle.id %>
       <br>
-    <%=vehicle_review.submit%>
+    <%= vehicle_review.submit %>
     <% end %>

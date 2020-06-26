@@ -1,22 +1,22 @@
-<%=render "shared/nav"%>
+<%= render "shared/nav" %>
 <u><h1> All Vehicles </h1></u>
 <h2> Clean Vehicles </h2>
 <% @clean_vehicles.each do |vehicle| %>
 <br>
-  Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle)%>
+  Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
   <br>
   Rented From:</b> <%= vehicle.company_name %>
   <br>
   On: <%= vehicle.pick_up_date %>
   <br>
   
-  <%end%>
+  <% end %>
  
   
  <h2> Infested Vehicles </h2>
     <% @infested_vehicles.each do |vehicle| %>
          <br>
-         Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle)%>
+         Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
       <br>
       Rented From:</b> <%= vehicle.company_name %>
          <br>

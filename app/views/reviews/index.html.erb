@@ -1,23 +1,23 @@
 
-<%=render "shared/nav"%>
+<%= render "shared/nav" %>
 <u><h2>Reviews</h2></u>
 
 <% @reviews.each do |review| %>
-    <% if review.vehicle.present?  %>
+    <% if review.vehicle.present? %>
     <%=  %>  <b>Vehicle:</b> <%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %><br>
         <ul> 
-          <li>Vehicle Experience Rating: <%= review.customer_experience_rating%>
+          <li>Vehicle Experience Rating: <%= review.customer_experience_rating %>
            <br>
-           Customer Support Rating: <%= review.customer_service_rating%>
+           Customer Support Rating: <%= review.customer_service_rating %>
            <br>
-           Overall Rating: <%=  review.customer_service_rating +  review.customer_experience_rating%>/20
+           Overall Rating: <%= review.customer_service_rating + review.customer_experience_rating %>/20
            <br>
          Posted on: <%= review.created_at.strftime("%Y-%m-%d") %><br>
-         Reviewed by: <%=  review.user.username   %>
+         Reviewed by: <%= review.user.username %>
         </ul>
       
-        <% if review.user == current_user  %> 
-        <%= link_to "Edit", edit_vehicle_review_path(review.vehicle, review)  %> 
+        <% if review.user == current_user %> 
+        <%= link_to "Edit", edit_vehicle_review_path(review.vehicle, review) %> 
         <%= button_to "delete", vehicle_review_path(review.vehicle, review), method: :delete %>
         <br>
         <% end %>

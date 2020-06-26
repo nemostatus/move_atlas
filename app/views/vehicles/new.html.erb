@@ -1,41 +1,41 @@
-<%=render "shared/nav"%>
+<%= render "shared/nav" %>
 
 <u><h1> New vehicle </h1></u>
-<%= form_for @vehicle, html: { autocomplete: "off" }  do |vehicle| %>
-  <%= render 'layouts/errors', object: vehicle.object %>
-    <%=vehicle.label :plate_number%> First 4 characters of license plate.
-    <%=vehicle.text_field :plate_number %>
+<%= form_for @vehicle, html: { autocomplete: "off" } do |vehicle| %>
+  <%= render "layouts/errors", object: vehicle.object %>
+    <%= vehicle.label :plate_number %> First 4 characters of license plate.
+    <%= vehicle.text_field :plate_number %>
   <br>
-    <%=vehicle.label :plate_state%>
-    <%=vehicle.text_field :plate_state%>
+    <%= vehicle.label :plate_state %>
+    <%= vehicle.text_field :plate_state %>
     <br>
-    <%=vehicle.label :vehicle_type%>
-    <%=vehicle.text_field :vehicle_type%>
+    <%= vehicle.label :vehicle_type %>
+    <%= vehicle.text_field :vehicle_type %>
     <br>
     Pick up date (YYYY-MM-DD):
-    <%=vehicle.text_field :pick_up_date%>
+    <%= vehicle.text_field :pick_up_date %>
     <br>
     What rental company did you use?
-    <%=vehicle.text_field :company_name%>
+    <%= vehicle.text_field :company_name %>
     <br>
     Do you suspect this vehicle of having bugs? 
-    <%=vehicle.check_box :status%>
+    <%= vehicle.check_box :status %>
     <br>
     Bug type? If there are no bugs put none.
-    <%=vehicle.text_field :bug_type%>
+    <%= vehicle.text_field :bug_type %>
     <br>
-    <%=vehicle.fields_for :reviews, @vehicle.reviews.build do |nest| %>
-        (1-10)How was the customer service? <%=nest.number_field :customer_service_rating%>
+    <%= vehicle.fields_for :reviews, @vehicle.reviews.build do |nest| %>
+        (1-10)How was the customer service? <%= nest.number_field :customer_service_rating %>
         <br>
-        (1-10) How was the vehicle?<%=nest.number_field :customer_experience_rating%>
+        (1-10) How was the vehicle?<%= nest.number_field :customer_experience_rating %>
         <br>
       
         <%= nest.hidden_field :user_id, value: current_user.id %>
 <% end %>
 
-    <%=vehicle.submit%>
+    <%= vehicle.submit %>
     
-    <%end%>
+    <% end %>
    
    
   

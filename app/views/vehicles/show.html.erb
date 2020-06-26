@@ -1,25 +1,25 @@
-<%=render "shared/nav"%>
-<u><h2><%=@vehicle.plate_number%></h2></u>
+<%= render "shared/nav" %>
+<u><h2><%= @vehicle.plate_number %></h2></u>
 
-Vehicle plate number: <%=@vehicle.plate_number%>
+Vehicle plate number: <%= @vehicle.plate_number %>
 <br>
-Vehicle plate state: <%=@vehicle.plate_state%>
+Vehicle plate state: <%= @vehicle.plate_state %>
 <br>
-   Vehicle type:  <%=@vehicle.vehicle_type%>
+   Vehicle type:  <%= @vehicle.vehicle_type %>
    <br>
-   Picked up on: <%=@vehicle.pick_up_date%>
+   Picked up on: <%= @vehicle.pick_up_date %>
    <br>
-   Rented from: <%=@vehicle.company_name%>
+   Rented from: <%= @vehicle.company_name %>
    <br>
-   Does this vehicle have bugs? <%=@vehicle.status == true ? "yes" : "no" %>
+   Does this vehicle have bugs? <%= @vehicle.status == true ? "yes" : "no" %>
    <br>
-   Bug Type <%=@vehicle.status == true ? @vehicle.bug_type : "NONE" %>
+   Bug Type <%= @vehicle.status == true ? @vehicle.bug_type : "NONE" %>
    <br>
    Reviewed by <%= @vehicle.users.uniq.count %> Users      
   <br>
-   <%=link_to "Reviews", vehicle_reviews_path(@vehicle)%>
+   <%= link_to "Reviews", vehicle_reviews_path(@vehicle) %>
    <br>
-   <%= link_to "Add A Review", new_vehicle_review_path(@vehicle)%>
+   <%= link_to "Add A Review", new_vehicle_review_path(@vehicle) %>
 
 
                             

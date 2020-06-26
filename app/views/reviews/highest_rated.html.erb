@@ -1,11 +1,11 @@
-<%=render "shared/nav"%>
+<%= render "shared/nav" %>
 
 <h1> Highest Rated Vehicles </h1>
 
-<ol><% @highest_rated.each do |review|%>
+<ol><% @highest_rated.each do |review| %>
  <% if review.vehicle.present? %>
- <li><%=link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %>
-   <%end%>
-   <%end%>
+ <li><%= link_to review.vehicle.plate_number, vehicle_path(review.vehicle) %>
+   <% end %>
+   <% end %>
 
 
