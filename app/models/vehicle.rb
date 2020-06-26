@@ -8,18 +8,11 @@ class Vehicle < ApplicationRecord
   validates :plate_number, length: { maximum: 4 }
   validates :pick_up_date, format: { with: /^\d{4}-\d{2}-\d{2}$/, multiline: true }
 
-  #def reviews_attributes=(reviews_attributes)
-  # reviews_attributes.values.each do |reviews_attributes|
-  #  #self.reviews << Review.where(reviews_attributes)
-  # self.reviews.build(reviews_attributes)
-  #end
-  #end
-
-  def self.clean_vehicle(status)
-    where(status: false)
+  def self.all_clean
+  where(status: false).order("company_name ASC")
   end
 
-  def self.infested_vehicle(status)
-    where(status: true)
+  def self.all_infested
+    where(status: true).order("company_name ASC")
   end
 end

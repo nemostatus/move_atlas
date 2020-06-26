@@ -7,8 +7,8 @@ class VehiclesController < ApplicationController
   end
 
   def all
-    @clean_vehicles = Vehicle.clean_vehicle(status: false).order("company_name ASC")
-    @infested_vehicles = Vehicle.infested_vehicle(status: true).order("company_name ASC")
+    @clean_vehicles = Vehicle.all_clean
+    @infested_vehicles = Vehicle.all_infested
   end
 
   def new
