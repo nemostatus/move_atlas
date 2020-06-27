@@ -1,25 +1,14 @@
 <%= render "shared/nav" %>
 
 <h2> Find by category </h2>
-<%= link_to "Your vehicle reviews", vehicles_path(:category => "yours")%>
-<u><h1>  All Vehicle Reviews </h1></u>
-<h2> Clean Vehicles </h2>
-<% @clean_vehicles.each do |vehicle| %>
-  Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
-  <br>
-  Rented From:</b> <%= vehicle.company_name %>
-  <br>
-  On: <%= vehicle.pick_up_date %>
-  
-  <br>
-  
-  <br>
-  <% end %>
+<%= link_to "Your vehicles", vehicles_path(:category => "yours")%>
+<%= link_to "All vehicles", vehicles_path(:category => "all")%>
+<%= link_to "Clean vehicles", vehicles_path(:category => "clean")%>
+<%= link_to "Infested vehicles", vehicles_path(:category => "infested")%>
 
-  
-<h2> Infested Vehicles </h2>
+<h2>  Vehicles </h2>
     
-     <% @infested_vehicles.each do |vehicle| %>
+     <% @vehicles.each do |vehicle| %>
   
       Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>
       <br>

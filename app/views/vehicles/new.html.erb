@@ -21,7 +21,7 @@
     Do you suspect this vehicle of having bugs? 
     <%= vehicle.check_box :status %>
     <br>
-    Bug type? If there are no bugs put none.
+    Bug type? If there are no bugs put N/A.
     <%= vehicle.text_field :bug_type %>
     <br>
     <%= vehicle.fields_for :reviews do |nest| %>
