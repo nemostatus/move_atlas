@@ -7,6 +7,11 @@
     (1-10)How was the customer service? 
         <%= vehicle_review.number_field :customer_service_rating %>
         <br>
+        Do you suspect this vehicle of having bugs?
+        <%= vehicle_review.check_box :status %>
+        <br>
+        Bug type? If there are no bugs put N/A.
+        <%= vehicle_review.text_field :bug_type %>
    <%= vehicle_review.hidden_field :vehicle_id, value: @vehicle.id %>
       <br>
     <%= vehicle_review.submit %>

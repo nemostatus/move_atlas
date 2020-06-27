@@ -10,7 +10,11 @@
            <br>
            Customer Support Rating: <%= review.customer_service_rating %>
            <br>
-           Overall Rating: <%= review.customer_service_rating + review.customer_experience_rating %>/20
+           Does this vehicle have bugs? <%= review.status == true ? "yes" : "no" %>
+           <br>
+           Bug Type: <%= review.bug_type %>
+            <br>
+          Overall Rating: <%= review.customer_service_rating + review.customer_experience_rating %>/20
            <br>
          Posted on: <%= review.created_at.strftime("%Y-%m-%d") %><br>
          Reviewed by: <%= review.user.username %>
