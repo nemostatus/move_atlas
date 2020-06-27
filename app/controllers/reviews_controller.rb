@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_vehicle, only: [:new, :index, :create, :edit]
   before_action :find_review, only: [:show, :edit, :update, :destroy]
-  
 
   def index
     @reviews = @vehicle.reviews
