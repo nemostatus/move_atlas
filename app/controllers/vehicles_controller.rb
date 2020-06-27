@@ -3,17 +3,17 @@ class VehiclesController < ApplicationController
 
   def index
     case params[:category]
-     when "yours"
-      @vehicles = current_user.vehicles 
-     when "all"
+    when "yours"
+      @vehicles = current_user.vehicles
+    when "all"
       @vehicles = Vehicle.all
-     when " clean"
+    when " clean"
       @vehicles = Vehicle.clean
     when "infested"
       @vehicles = Vehicle.infested
     else
-    @vehicles = Vehicle.all
-  end  
+      @vehicles = Vehicle.all
+    end
   end
 
   def new

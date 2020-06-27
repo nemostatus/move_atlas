@@ -9,7 +9,7 @@ class Vehicle < ApplicationRecord
   validates :pick_up_date, format: { with: /^\d{4}-\d{2}-\d{2}$/, multiline: true }
 
   def self.clean
-  where(status: false).order("company_name ASC")
+    where(status: false).order("company_name ASC")
   end
 
   def self.infested

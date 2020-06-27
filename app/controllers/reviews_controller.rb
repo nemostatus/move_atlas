@@ -7,8 +7,6 @@ class ReviewsController < ApplicationController
     @reviews = @vehicle.reviews
   end
 
-
-
   def new
     @review = Review.new
 
