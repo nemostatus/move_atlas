@@ -7,7 +7,7 @@ class VehiclesController < ApplicationController
       @vehicles = current_user.vehicles
     when "all"
       @vehicles = Vehicle.all
-    when " clean"
+    when "clean"
       @vehicles = Vehicle.clean
     when "infested"
       @vehicles = Vehicle.infested
