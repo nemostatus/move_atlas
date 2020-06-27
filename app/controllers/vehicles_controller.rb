@@ -2,9 +2,13 @@ class VehiclesController < ApplicationController
   before_action :find_vehicle, except: [:index, :all, :new, :create]
 
   def index
+    if params[:category]
+      @clean_vehicles = Vehicle.clean
+      @infested_vehicles =  Vehicle.infested
+    else
     @clean_vehicles = Vehicle.clean
     @infested_vehicles = Vehicle.infested
-    
+  end  
   end
 
   def new
