@@ -7,7 +7,9 @@ You are already logged in <%= current_user.username %> would you like to go to y
 
 <%= button_to "Login", "/login", method: :get %>
 <%= button_to "Sign Up", "/signup", method: :get %>
-<%= button_to "Logout", "/logout", method: :delete %>
+<%= link_to "Logout", logout_path, method: :delete %>
+<br>
+<br>
 <%= link_to "Sign up or login with Github", "/auth/github" %> (Must have email set in Github profile settings)
 
 
