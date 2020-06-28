@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-  before_action :find_vehicle, except: [:index, :all, :new, :create]
+  before_action :find_vehicle, except: [:index, :new, :create]
 
   def index
     case params[:category]
