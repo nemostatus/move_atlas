@@ -15,4 +15,10 @@ class Vehicle < ApplicationRecord
   def self.infested
     where(status: true).order("company_name ASC")
   end
+
+  def self.search(query)
+  
+   where(company_name: query)
+  end
+
 end

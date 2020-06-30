@@ -5,8 +5,7 @@ class VehiclesController < ApplicationController
     case params[:category]
     when "yours"
       @vehicles = current_user.vehicles
-    when "all"
-      @vehicles = Vehicle.all
+  
     when "clean"
       @vehicles = Vehicle.clean
     when "infested"
@@ -14,7 +13,14 @@ class VehiclesController < ApplicationController
     else
       @vehicles = Vehicle.all
     end
+
+    if params[:query].present?
+      @vehicles = Vehicle.search(params[:query])
+   
+else 
+flash.now[:notice] = "search not found"
   end
+  end 
 
   def new
     @vehicle = Vehicle.new
