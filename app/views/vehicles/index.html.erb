@@ -8,7 +8,7 @@
 
 <h2> search by rental company </h2>
  <%= form_tag("/vehicles", method: :get) do %>
-  <%= label_tag("Search:")%>
+  <%= label_tag("Search:") %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Submit") %>
   <% end %>
