@@ -17,6 +17,6 @@ class Vehicle < ApplicationRecord
   end
 
   def self.search(query)
-    where("company_name LIKE (?)", "%#{query}%")
+    where("company_name LIKE (?)", "#{query}%")
   end
 end
