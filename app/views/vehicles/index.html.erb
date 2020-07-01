@@ -13,7 +13,9 @@
   <%= submit_tag("Submit") %>
   <% end %>
 <h2>  Vehicles </h2>
-    
+    <%= flash[:notice] %>
+    <br>
+    <br>
      <% @vehicles.each do |vehicle| %>
   
       Vehicle Plate: <%= link_to vehicle.plate_number, vehicle_path(vehicle) %>

@@ -16,9 +16,8 @@ class VehiclesController < ApplicationController
 
     if params[:query].present?
       @vehicles = Vehicle.search(params[:query])
-   
-else 
-flash.now[:notice] = "search not found"
+
+   flash.now[:notice] = "#{@vehicles.count} Vehicle(s) found."
   end
   end 
 
